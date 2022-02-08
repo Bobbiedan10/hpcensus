@@ -1,0 +1,7 @@
+.navbar {
+  @apply fixed bg-blue-50 inset-x-0 shadow top-0 dark:bg-blue-700 z-50 dark:text-blue-50;
+}
+
+.container {
+  @apply max-w-7xl mx-auto;
+}

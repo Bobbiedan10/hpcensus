@@ -1,0 +1,14 @@
+.navigation {
+  @apply flex justify-between;
+}
+
+.logo {
+  @apply flex;
+}
+.logo a {
+  @apply flex items-center py-4 md:py-0  px-2 text-lg font-semibold;
+}
+
+.logo img {
+  @apply w-10 lg:w-14;
+}

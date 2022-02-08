@@ -1,0 +1,10 @@
+.navigation {
+  @apply hidden md:flex items-center;
+}
+
+.active {
+  @apply border-b-4 border-white z-20 border-opacity-100 !important;
+}
+.navigation a {
+  @apply py-4 px-4 border-b-4 dark:border-gray-500 hover:border-blue-50 transition ease-in-out duration-200 dark:text-gray-50;
+}

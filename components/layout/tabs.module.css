@@ -1,0 +1,17 @@
+.tabs {
+  @apply flex dark:bg-blue-500 bg-blue-50;
+}
+
+.tabs li {
+  @apply py-3 px-4 font-bold rounded-t-md dark:text-blue-50 hover:text-white cursor-pointer;
+}
+
+.active {
+  @apply rounded-b-none rounded-t-md border-none overflow-hidden text-blue-50 font-bold !important;
+}
+.content {
+  @apply hidden;
+}
+.active_content {
+  @apply block;
+}
