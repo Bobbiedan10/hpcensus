@@ -4,7 +4,7 @@
   "main": "function.js",
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
+    "build": "next build",
     "start": "next start",
     "deploy": "npm run build && cross-env NODE_ENV=production firebase deploy --only hosting",
     "lint": "next lint"
