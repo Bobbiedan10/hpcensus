@@ -89,7 +89,7 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   const { params } = context;
   let id = params.enumerator;
   let identity = await firebase.getDocument("enumerators", id);

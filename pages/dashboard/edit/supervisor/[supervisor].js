@@ -79,7 +79,11 @@ function EditSupervisor(props) {
               <h1>Edit</h1>
             </div>
             <div>
-              <EditSupervisorForm id={id} identity={identity} seniors={seniors} />
+              <EditSupervisorForm
+                id={id}
+                identity={identity}
+                seniors={seniors}
+              />
             </div>
           </div>
         </div>
@@ -88,20 +92,20 @@ function EditSupervisor(props) {
   );
 }
 
-export async function getStaticPaths() {
-  return {
-    paths: [
-      {
-        params: {
-          supervisor: "1",
-        },
-      },
-    ],
-    fallback: true,
-  };
-}
+// export async function getStaticPaths() {
+//   return {
+//     paths: [
+//       {
+//         params: {
+//           supervisor: "1",
+//         },
+//       },
+//     ],
+//     fallback: true,
+//   };
+// }
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   const { params } = context;
   let id = params.supervisor;
 
