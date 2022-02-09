@@ -5,11 +5,9 @@ import firebase from "../firebase/firebase";
 function MyApp({ Component, pageProps }) {
   const [firebaseInitialized, setFirebaseInitialized] = useState(false);
 
-  useEffect(() => {
-    async () => {
-      await firebase.isInitialized();
-      setFirebaseInitialized(true);
-    };
+  useEffect(async () => {
+    await firebase.isInitialized();
+    setFirebaseInitialized(true);
   }, []);
 
   return (
