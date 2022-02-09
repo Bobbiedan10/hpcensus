@@ -22,7 +22,7 @@ function SeniorForm(props) {
   return (
     <div>
       <div className='flex items-center justify-between px-2 lg:px-4 py-2 text-2xl bg-yellow-500 text-white font-bold'>
-        <h1>Supervisor Form</h1>
+        <h1>Senior Supervisor Form</h1>
       </div>
       <form className='grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-6 space-y-2'>
         <div className='bg-blue-600 text-white sm:col-span-4 lg:col-span-6 border-b py-2 px-4'>
