@@ -348,10 +348,8 @@ function SupervisorForm(props) {
               }`}>
               <option value=''>Select Senior</option>
               {seniors.map((senior) => (
-                <option
-                  key={senior.id}
-                  value={`${senior.docData.name.first} ${senior.docData.name.last}`}>
-                  {senior.docData.name.first} {senior.docData.name.last}
+                <option key={senior.id} value={`${senior.docData.name}`}>
+                  {senior.docData.name}
                 </option>
               ))}
             </select>

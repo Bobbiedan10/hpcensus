@@ -1,7 +1,9 @@
 import Layout from "../../../../components/layout/layout";
 import firebase from "../../../../firebase/firebase";
 import Link from "next/link";
-function ViewUser() {
+import SeniorSupervisorView from "../../../../components/views/senior-supervisor-view";
+function ViewSenior(props) {
+  const { identity, supes, enums } = props;
   const profile = firebase.getProfile();
   return (
     <Layout>
@@ -46,7 +48,13 @@ function ViewUser() {
             <div className='flex items-center justify-between px-2 lg:px-4 py-2 text-xl bg-gray-500 text-white font-bold'>
               <h1>View</h1>
             </div>
-            <div></div>
+            <div>
+              <SeniorSupervisorView
+                identity={identity}
+                supes={supes}
+                enums={enums}
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -54,4 +62,24 @@ function ViewUser() {
   );
 }
 
-export default ViewUser;
+export async function getServerSideProps(context) {
+  const { params } = context;
+  let id = params.enumerator;
+
+  let identity = await firebase.getDocument("senior-supervisors", id);
+  let enumerators = await firebase.getCollection("enumerators");
+  let supervisor = await firebase.getCollection("supervisors");
+  let enums = JSON.stringify(enumerators);
+  let iden = JSON.stringify(identity);
+  let supes = JSON.stringify(supervisor);
+
+  return {
+    props: {
+      identity: iden,
+      enums: enums,
+      supes: supes,
+    },
+  };
+}
+
+export default ViewSenior;
