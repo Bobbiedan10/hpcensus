@@ -76,18 +76,18 @@ function DeleteSupervisor(props) {
   );
 }
 
-export async function getStaticPaths() {
-  return {
-    paths: [
-      {
-        params: {
-          supervisor: "1",
-        },
-      },
-    ],
-    fallback: true,
-  };
-}
+// export async function getStaticPaths() {
+//   return {
+//     paths: [
+//       {
+//         params: {
+//           supervisor: "1",
+//         },
+//       },
+//     ],
+//     fallback: true,
+//   };
+// }
 
 export async function getServerSideProps(context) {
   const { params } = context;

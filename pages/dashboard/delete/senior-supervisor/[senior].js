@@ -76,18 +76,18 @@ function DeleteSenior(props) {
   );
 }
 
-export async function getStaticPaths() {
-  return {
-    paths: [
-      {
-        params: {
-          senior: "1",
-        },
-      },
-    ],
-    fallback: true,
-  };
-}
+// export async function getStaticPaths() {
+//   return {
+//     paths: [
+//       {
+//         params: {
+//           senior: "1",
+//         },
+//       },
+//     ],
+//     fallback: true,
+//   };
+// }
 
 export async function getServerSideProps(context) {
   const { params } = context;

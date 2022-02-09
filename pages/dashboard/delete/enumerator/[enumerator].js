@@ -76,18 +76,18 @@ function DeleteEnumerator(props) {
   );
 }
 
-export async function getStaticPaths() {
-  return {
-    paths: [
-      {
-        params: {
-          enumerator: "1",
-        },
-      },
-    ],
-    fallback: true,
-  };
-}
+// export async function getStaticPaths() {
+//   return {
+//     paths: [
+//       {
+//         params: {
+//           enumerator: "1",
+//         },
+//       },
+//     ],
+//     fallback: true,
+//   };
+// }
 
 export async function getServerSideProps(context) {
   const { params } = context;
