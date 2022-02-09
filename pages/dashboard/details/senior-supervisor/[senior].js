@@ -5,6 +5,22 @@ import SeniorSupervisorView from "../../../../components/views/senior-supervisor
 function ViewSenior(props) {
   const { identity, supes, enums } = props;
   const profile = firebase.getProfile();
+
+  if (!identity) {
+    return (
+      <>
+        <div className='h-screen flex justify-center items-center '>
+          <div className='flex space-x-2 animate-spin'>
+            <div className='rounded-full p-4 bg-blue-600  duration-100 shadow-lg'></div>
+            <div className='rounded-full p-4 bg-pink-600  duration-150 shadow-lg'></div>
+            <div className='rounded-full p-4 bg-orange-600 delay-200 shadow-lg'></div>
+          </div>
+        </div>
+      </>
+    );
+  }
+
+  console.log(identity, supes, enums);
   return (
     <Layout>
       <div className='mx-auto lg:h-screen'>
@@ -64,7 +80,7 @@ function ViewSenior(props) {
 
 export async function getServerSideProps(context) {
   const { params } = context;
-  let id = params.enumerator;
+  let id = params.senior;
 
   let identity = await firebase.getDocument("senior-supervisors", id);
   let enumerators = await firebase.getCollection("enumerators");
