@@ -10,16 +10,17 @@ const firebaseConfig = {
   projectId: "census2021-2022",
   storageBucket: "census2021-2022.appspot.com",
   messagingSenderId: "316664629063",
-  appId: "1:316664629063:web:a23206e2dffd483415ae62",
+  appId: "1:316664629063:web:9eec8dcbcc82c59515ae62",
 };
-
 class Firebase {
   constructor() {
     if (!firebase.apps.length) {
       firebase.initializeApp(firebaseConfig);
+      console.log("online");
     }
     this.auth = firebase.auth();
-    this.firestore = firebase.firestore();
+    //this.firestore = firebase.firestore();
+    console.log("online");
   }
 
   async login({ email, pass }) {
@@ -41,26 +42,27 @@ class Firebase {
   isInitialized() {
     return new Promise((resolve) => {
       this.auth.onAuthStateChanged(resolve);
+      console.log("initialized");
     });
   }
 
   isLoggedIn() {
     let sessionTimeout = null;
     if (this.auth.currentUser) {
-      this.auth.currentUser.getIdTokenResult().then((idTokenResult) => {
-        const authTime = idTokenResult.claims.auth_time * 1000;
-        const sessionDuration = 1000 * 60 * 60 * 2;
-        const milliscondsUntilExpiration =
-          sessionDuration - (Date.now() - authTime);
-        sessionTimeout = setTimeout(
-          () => this.auth.signOut(),
-          milliscondsUntilExpiration
-        );
-      });
+      // this.auth.currentUser.getIdTokenResult().then((idTokenResult) => {
+      //   const authTime = idTokenResult.claims.auth_time * 1000;
+      //   const sessionDuration = 1000 * 60 * 60 * 2;
+      //   const milliscondsUntilExpiration =
+      //     sessionDuration - (Date.now() - authTime);
+      //   sessionTimeout = setTimeout(
+      //     () => this.auth.signOut(),
+      //     milliscondsUntilExpiration
+      //   );
+      // });
       return true;
     } else {
-      sessionTimeout && clearTimeout(sessionTimeout);
-      sessionTimeout = null;
+      // sessionTimeout && clearTimeout(sessionTimeout);
+      // sessionTimeout = null;
       return false;
     }
   }
