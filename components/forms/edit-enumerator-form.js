@@ -441,7 +441,7 @@ function EditEnumeratorForm(props) {
               <input
                 name='ed'
                 type='text'
-                defaultValue={id.docData.ed}
+                defaultValue={id.docData.ed.slice(-1)}
                 placeholder='ED#'
                 {...register("ed", {
                   required: {

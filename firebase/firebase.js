@@ -185,6 +185,7 @@ class Firebase {
     oath,
     enumId,
     transport,
+    tablet,
   }) {
     try {
       await firebase
@@ -212,6 +213,7 @@ class Firebase {
           oath: oath,
           id: enumId,
           transport: transport,
+          tablet: tablet,
           // time_stamp: firebase.firestore.FieldValue.serverTimestamp(),
         })
         .then(() => {
@@ -242,6 +244,7 @@ class Firebase {
     oath,
     enumId,
     transport,
+    tablet,
   }) {
     try {
       await firebase
@@ -267,6 +270,7 @@ class Firebase {
           oath: oath,
           id: enumId,
           transport: transport,
+          tablet: tablet,
           // time_stamp: firebase.firestore.FieldValue.serverTimestamp(),
         })
         .then(() => {
@@ -279,7 +283,7 @@ class Firebase {
     }
   }
 
-  async addSenior({ name, address, phone, email, role, status }) {
+  async addSenior({ name, address, phone, email, role, status, tablet }) {
     try {
       await firebase
         .firestore()
@@ -291,6 +295,7 @@ class Firebase {
           email: email,
           role: role,
           status: status,
+          tablet: tablet,
           // time_stamp: firebase.firestore.FieldValue.serverTimestamp(),
         })
         .then(() => {

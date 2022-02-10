@@ -61,8 +61,8 @@ function ViewSenior(props) {
                 </a>
               </Link>
             </div>
-            <div className='flex items-center justify-between px-2 lg:px-4 py-2 text-xl bg-gray-500 text-white font-bold'>
-              <h1>View</h1>
+            <div className='flex items-center justify-between px-2 lg:px-4 py-2 text-xl bg-blue-600 text-white font-bold'>
+              <h1>View Senior</h1>
             </div>
             <div>
               <SeniorSupervisorView

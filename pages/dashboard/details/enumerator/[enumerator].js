@@ -1,8 +1,24 @@
 import Layout from "../../../../components/layout/layout";
 import firebase from "../../../../firebase/firebase";
 import Link from "next/link";
-function ViewEnumerator() {
+import EnumeratorView from "../../../../components/views/enumerator-view";
+function ViewEnumerator(props) {
+  const { identity } = props;
   const profile = firebase.getProfile();
+
+  if (!identity) {
+    return (
+      <>
+        <div className='h-screen flex justify-center items-center '>
+          <div className='flex space-x-2 animate-spin'>
+            <div className='rounded-full p-4 bg-blue-600  duration-100 shadow-lg'></div>
+            <div className='rounded-full p-4 bg-pink-600  duration-150 shadow-lg'></div>
+            <div className='rounded-full p-4 bg-orange-600 delay-200 shadow-lg'></div>
+          </div>
+        </div>
+      </>
+    );
+  }
   return (
     <Layout>
       <div className='mx-auto lg:h-screen'>
@@ -43,10 +59,12 @@ function ViewEnumerator() {
                 </a>
               </Link>
             </div>
-            <div className='flex items-center justify-between px-2 lg:px-4 py-2 text-xl bg-gray-500 text-white font-bold'>
-              <h1>View</h1>
+            <div className='flex items-center justify-between px-2 lg:px-4 py-2 text-xl bg-blue-600 text-white font-bold'>
+              <h1>View Enumerator</h1>
             </div>
-            <div></div>
+            <div>
+              <EnumeratorView identity={identity} />
+            </div>
           </div>
         </div>
       </div>

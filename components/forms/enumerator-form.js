@@ -550,6 +550,46 @@ function EnumeratorForm(props) {
             </select>
           </div>
         </div>
+        {/*TABLET ID*/}
+        <div className='px-4 flex gap-1 lg:col-span-2'>
+          <div className='flex items-center gap-2'>
+            <label
+              className='flex font-bold'
+              htmlFor='Tablet'
+              title='Tablet Serial Code'>
+              <DeviceMobileIcon />
+            </label>
+            <input
+              name='tablet'
+              type='text'
+              maxLength={11}
+              placeholder='R9WR20HEF6J'
+              {...register("tablet", {
+                required: {
+                  value: false,
+                },
+                pattern: {
+                  value: /^[0-9A-Z]+/g,
+                  message: "Please enter tablet serial code.",
+                },
+                maxLength: {
+                  value: 11,
+                  message: "Serial codes are 11 digits long",
+                },
+                minLength: {
+                  value: 11,
+                  message: "Serial codes are 11 digits long",
+                },
+              })}
+              className={`bg-gray-100 p-2 rounded-lg border w-full ${
+                errors.name ? "border-red-500" : null
+              }`}
+            />
+            <div className='text-red-500 font-medium'>
+              {errors?.ed?.message}
+            </div>
+          </div>
+        </div>
         {/*SUBMIT*/}
         <div className='px-3 py-2 sm:col-span-2 lg:col-span-6 border-t'>
           <div className='flex items-center gap-2 '>

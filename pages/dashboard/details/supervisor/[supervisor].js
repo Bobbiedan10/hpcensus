@@ -1,8 +1,25 @@
 import Layout from "../../../../components/layout/layout";
 import firebase from "../../../../firebase/firebase";
 import Link from "next/link";
-function ViewSupervisor() {
+import SupervisorView from "../../../../components/views/supervisor-view";
+function ViewSupervisor(props) {
+  const { identity, enums } = props;
   const profile = firebase.getProfile();
+
+  if (!identity) {
+    return (
+      <>
+        <div className='h-screen flex justify-center items-center '>
+          <div className='flex space-x-2 animate-spin'>
+            <div className='rounded-full p-4 bg-blue-600  duration-100 shadow-lg'></div>
+            <div className='rounded-full p-4 bg-pink-600  duration-150 shadow-lg'></div>
+            <div className='rounded-full p-4 bg-orange-600 delay-200 shadow-lg'></div>
+          </div>
+        </div>
+      </>
+    );
+  }
+
   return (
     <Layout>
       <div className='mx-auto lg:h-screen'>
@@ -43,10 +60,12 @@ function ViewSupervisor() {
                 </a>
               </Link>
             </div>
-            <div className='flex items-center justify-between px-2 lg:px-4 py-2 text-xl bg-gray-500 text-white font-bold'>
-              <h1>View</h1>
+            <div className='flex items-center justify-between px-2 lg:px-4 py-2 text-xl bg-blue-600 text-white font-bold'>
+              <h1>View Supervisor</h1>
             </div>
-            <div></div>
+            <div>
+              <SupervisorView identity={identity} enums={enums} />
+            </div>
           </div>
         </div>
       </div>
@@ -71,11 +90,15 @@ export async function getServerSideProps(context) {
   const { params } = context;
   let id = params.supervisor;
   let identity = await firebase.getDocument("supervisors", id);
+  let enumerators = await firebase.getCollection("enumerators");
+
   let iden = JSON.stringify(identity);
+  let enums = JSON.stringify(enumerators);
 
   return {
     props: {
       identity: iden,
+      enums: enums,
     },
   };
 }

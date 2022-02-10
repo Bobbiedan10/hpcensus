@@ -72,8 +72,8 @@ function SeniorSupervisor(props) {
                   {allSeniors.length == 0 ? (
                     <tr>
                       <td>
-                        <div className='flex absolute w-full h-full lg:h-96 mb-20 lg:my-0 lg:mt-28 items-center justify-center font-bold text-3xl'>
-                          <h1>No Supervisor Data</h1>
+                        <div className='flex absolute w-11/12 h-full lg:h-96 mb-20 lg:my-0 lg:mt-28 items-center justify-center font-bold text-3xl'>
+                          <h1>No Senior Supervisor Data</h1>
                         </div>
                       </td>
                     </tr>

@@ -77,7 +77,7 @@ function Enumerators(props) {
                   {allEnum.length == 0 ? (
                     <tr>
                       <td>
-                        <div className='flex absolute w-full h-full lg:h-96 mb-20 lg:my-0 lg:mt-28 items-center justify-center font-bold text-3xl'>
+                        <div className='flex absolute w-11/12 h-full lg:h-96 mb-20 lg:my-0 lg:mt-28 items-center justify-center font-bold text-3xl'>
                           <h1>No Enumerator Data</h1>
                         </div>
                       </td>
