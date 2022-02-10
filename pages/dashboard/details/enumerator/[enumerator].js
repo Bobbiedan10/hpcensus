@@ -1,7 +1,7 @@
 import Layout from "../../../../components/layout/layout";
 import firebase from "../../../../firebase/firebase";
 import Link from "next/link";
-function ViewUser() {
+function ViewEnumerator() {
   const profile = firebase.getProfile();
   return (
     <Layout>
@@ -46,9 +46,7 @@ function ViewUser() {
             <div className='flex items-center justify-between px-2 lg:px-4 py-2 text-xl bg-gray-500 text-white font-bold'>
               <h1>View</h1>
             </div>
-            <div>
-              
-            </div>
+            <div></div>
           </div>
         </div>
       </div>
@@ -56,4 +54,30 @@ function ViewUser() {
   );
 }
 
-export default ViewUser;
+// export async function getStaticPaths() {
+//   let res = await firebase.getCollection("enumerators");
+//   console.log(res);
+
+//   const paths = res.map((path) => ({
+//     params: { enumerator: path.id },
+//   }));
+//   return {
+//     paths,
+//     fallback: true,
+//   };
+// }
+
+export async function getServerSideProps(context) {
+  const { params } = context;
+  let id = params.enumerator;
+  let identity = await firebase.getDocument("enumerators", id);
+  let iden = JSON.stringify(identity);
+
+  return {
+    props: {
+      identity: iden,
+    },
+  };
+}
+
+export default ViewEnumerator;

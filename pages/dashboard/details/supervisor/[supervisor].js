@@ -1,7 +1,7 @@
 import Layout from "../../../../components/layout/layout";
 import firebase from "../../../../firebase/firebase";
 import Link from "next/link";
-function ViewUser() {
+function ViewSupervisor() {
   const profile = firebase.getProfile();
   return (
     <Layout>
@@ -54,4 +54,30 @@ function ViewUser() {
   );
 }
 
-export default ViewUser;
+// export async function getStaticPaths() {
+//   let res = await firebase.getCollection("supervisors");
+//   console.log(res);
+
+//   const paths = res.map((path) => ({
+//     params: { supervisor: path.id },
+//   }));
+//   return {
+//     paths,
+//     fallback: true,
+//   };
+// }
+
+export async function getServerSideProps(context) {
+  const { params } = context;
+  let id = params.supervisor;
+  let identity = await firebase.getDocument("supervisors", id);
+  let iden = JSON.stringify(identity);
+
+  return {
+    props: {
+      identity: iden,
+    },
+  };
+}
+
+export default ViewSupervisor;

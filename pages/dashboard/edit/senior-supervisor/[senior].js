@@ -89,14 +89,14 @@ function EditSenior(props) {
 }
 
 // export async function getStaticPaths() {
+//   let res = await firebase.getCollection("senior-supervisors");
+//   console.log(res);
+
+//   const paths = res.map((path) => ({
+//     params: { senior: path.id },
+//   }));
 //   return {
-//     paths: [
-//       {
-//         params: {
-//           senior: "1",
-//         },
-//       },
-//     ],
+//     paths,
 //     fallback: true,
 //   };
 // }

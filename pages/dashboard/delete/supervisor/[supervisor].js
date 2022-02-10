@@ -77,14 +77,14 @@ function DeleteSupervisor(props) {
 }
 
 // export async function getStaticPaths() {
+//   let res = await firebase.getCollection("supervisors");
+//   console.log(res);
+
+//   const paths = res.map((path) => ({
+//     params: { supervisor: path.id },
+//   }));
 //   return {
-//     paths: [
-//       {
-//         params: {
-//           supervisor: "1",
-//         },
-//       },
-//     ],
+//     paths,
 //     fallback: true,
 //   };
 // }

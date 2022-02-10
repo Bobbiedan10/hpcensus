@@ -77,14 +77,14 @@ function DeleteEnumerator(props) {
 }
 
 // export async function getStaticPaths() {
+//   let res = await firebase.getCollection("enumerators");
+//   console.log(res);
+
+//   const paths = res.map((path) => ({
+//     params: { enumerator: path.id },
+//   }));
 //   return {
-//     paths: [
-//       {
-//         params: {
-//           enumerator: "1",
-//         },
-//       },
-//     ],
+//     paths,
 //     fallback: true,
 //   };
 // }

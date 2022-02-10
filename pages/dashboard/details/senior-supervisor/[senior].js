@@ -98,4 +98,17 @@ export async function getServerSideProps(context) {
   };
 }
 
+// export async function getStaticPaths() {
+//   let res = await firebase.getCollection("senior-supervisors");
+//   console.log(res);
+
+//   const paths = res.map((path) => ({
+//     params: { senior: path.id },
+//   }));
+//   return {
+//     paths,
+//     fallback: true,
+//   };
+// }
+
 export default ViewSenior;
