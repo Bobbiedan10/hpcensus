@@ -127,7 +127,7 @@ function SeniorSupervisor(props) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   let allSeniors = await firebase.getCollection("senior-supervisors");
 
   return {

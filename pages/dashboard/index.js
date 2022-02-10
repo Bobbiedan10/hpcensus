@@ -87,7 +87,7 @@ function Dashboard(props) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   let enumCount = await firebase.getCountByCondition(
     "enumerators",
     "status",

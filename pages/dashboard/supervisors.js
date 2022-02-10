@@ -129,7 +129,7 @@ function Supervisors(props) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   let allSupes = await firebase.getCollection("supervisors");
 
   return {
