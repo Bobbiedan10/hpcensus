@@ -49,20 +49,20 @@ class Firebase {
   isLoggedIn() {
     let sessionTimeout = null;
     if (this.auth.currentUser) {
-      // this.auth.currentUser.getIdTokenResult().then((idTokenResult) => {
-      //   const authTime = idTokenResult.claims.auth_time * 1000;
-      //   const sessionDuration = 1000 * 60 * 60 * 2;
-      //   const milliscondsUntilExpiration =
-      //     sessionDuration - (Date.now() - authTime);
-      //   sessionTimeout = setTimeout(
-      //     () => this.auth.signOut(),
-      //     milliscondsUntilExpiration
-      //   );
-      // });
+      this.auth.currentUser.getIdTokenResult().then((idTokenResult) => {
+        const authTime = idTokenResult.claims.auth_time * 1000;
+        const sessionDuration = 1000 * 60 * 60 * 2;
+        const milliscondsUntilExpiration =
+          sessionDuration - (Date.now() - authTime);
+        sessionTimeout = setTimeout(
+          () => this.auth.signOut(),
+          milliscondsUntilExpiration
+        );
+      });
       return true;
     } else {
-      // sessionTimeout && clearTimeout(sessionTimeout);
-      // sessionTimeout = null;
+      sessionTimeout && clearTimeout(sessionTimeout);
+      sessionTimeout = null;
       return false;
     }
   }
