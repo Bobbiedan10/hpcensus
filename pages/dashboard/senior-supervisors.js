@@ -3,7 +3,6 @@ import Layout from "../../components/layout/layout";
 import firebase from "../../firebase/firebase";
 function SeniorSupervisor(props) {
   const { allSeniors } = props;
-  console.log(allSeniors);
   const profile = firebase.getProfile();
   return (
     <Layout>

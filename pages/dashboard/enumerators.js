@@ -4,7 +4,6 @@ import firebase from "../../firebase/firebase";
 function Enumerators(props) {
   const { allEnum } = props;
   // let allEnums = JSON.parse(allEnum);
-  console.log(allEnum);
   const profile = firebase.getProfile();
   return (
     <Layout>

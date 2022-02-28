@@ -5,8 +5,6 @@ import firebase from "../../firebase/firebase";
 
 function AddNewPerson(props) {
   const profile = firebase.getProfile();
-
-  console.log(props.supes);
   return (
     <Layout>
       <div className='mx-auto lg:h-screen'>

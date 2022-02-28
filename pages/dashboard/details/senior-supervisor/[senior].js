@@ -20,7 +20,6 @@ function ViewSenior(props) {
     );
   }
 
-  console.log(identity, supes, enums);
   return (
     <Layout>
       <div className='mx-auto lg:h-screen'>

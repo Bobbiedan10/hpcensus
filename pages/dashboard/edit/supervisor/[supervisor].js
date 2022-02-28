@@ -112,7 +112,6 @@ export async function getServerSideProps(context) {
   let identity = await firebase.getDocument("supervisors", id);
   let seniors = await firebase.getCollection("senior-supervisors");
   let iden = JSON.stringify(identity);
-  console.log(iden);
 
   return {
     props: {

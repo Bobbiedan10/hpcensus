@@ -16,11 +16,9 @@ class Firebase {
   constructor() {
     if (!firebase.apps.length) {
       firebase.initializeApp(firebaseConfig);
-      console.log("online");
     }
     this.auth = firebase.auth();
     this.firestore = firebase.firestore();
-    console.log("online");
   }
 
   async login({ email, pass }) {
