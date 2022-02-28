@@ -27,8 +27,8 @@ function EditUser(props) {
     <Layout>
       <div className='mx-auto lg:h-screen'>
         <div className='grid lg:grid-cols-6 h-full'>
-          <div className='lg:col-span-1 mt-14 bg-gray-100 '>
-            <ul className='flex lg:flex-col'>
+          <div className='lg:col-span-1 dark:bg-gray-700 mt-14 bg-gray-100 '>
+            <ul className='dark:bg-gray-600 dark:text-gray-300 flex lg:flex-col'>
               <li className='h-14 flex items-center border-b-2'>
                 <Link href='/dashboard/senior-supervisors'>
                   <a
@@ -65,7 +65,7 @@ function EditUser(props) {
             </ul>
           </div>
           <div className='lg:mt-14 lg:col-span-5 flex flex-col'>
-            <div className='flex items-center justify-between px-2 lg:px-4 py-3 bg-gray-300'>
+            <div className='flex items-center justify-between dark:bg-gray-400 px-2 lg:px-4 py-3 bg-gray-300'>
               <h1 className=''>
                 <b>Welcome,</b> {profile.name}
               </h1>

@@ -4,13 +4,13 @@ import "firebase/compat/firestore";
 import Router from "next/router";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDzExL2WYyl34E2ml8LPYuQ3ZZ4Ls4zuNY",
-  authDomain: "census2021-2022.firebaseapp.com",
-  databaseURL: "https://census2021-2022-default-rtdb.firebaseio.com",
-  projectId: "census2021-2022",
-  storageBucket: "census2021-2022.appspot.com",
-  messagingSenderId: "316664629063",
-  appId: "1:316664629063:web:9eec8dcbcc82c59515ae62",
+  apiKey: process.env.NEXT_PUBLIC_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_AUTH_DOMAIN,
+  databaseURL: process.env.NEXT_PUBLIC_DATABASE_URL,
+  projectId: process.env.NEXT_PUBLIC_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_APP_ID,
 };
 class Firebase {
   constructor() {
@@ -19,7 +19,7 @@ class Firebase {
       console.log("online");
     }
     this.auth = firebase.auth();
-    //this.firestore = firebase.firestore();
+    this.firestore = firebase.firestore();
     console.log("online");
   }
 
@@ -133,6 +133,22 @@ class Firebase {
     return count;
   }
 
+  async getCollectionByCondition(collection, field, condition, value) {
+    let list = [];
+    let db = firebase
+      .firestore()
+      .collection(collection)
+      .where(field, condition, value);
+
+    await db.get().then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        list.push(doc.data());
+      });
+    });
+
+    return list;
+  }
+
   async getCollection(collection) {
     let data = [];
     let db = firebase.firestore().collection(collection);
@@ -180,49 +196,55 @@ class Firebase {
     senior,
     supervisor,
     ed,
+    enum_parish,
     status,
     contract,
     oath,
     enumId,
     transport,
     tablet,
+    mass_ed,
   }) {
-    try {
-      await firebase
-        .firestore()
-        .collection("enumerators")
-        .add({
-          name: name,
-          address: address,
-          phone: phone,
-          email: email,
-          nid: nid,
-          banking: {
-            nis: nis,
-            tin: tin,
-            bank: bank,
-            branch: branch,
-            account: account,
-          },
-          role: role,
-          senior: senior,
-          supervisor: supervisor,
-          ed: firebase.firestore.FieldValue.arrayUnion(ed),
-          status: status,
-          contract: contract,
-          oath: oath,
-          id: enumId,
-          transport: transport,
-          tablet: tablet,
-          // time_stamp: firebase.firestore.FieldValue.serverTimestamp(),
-        })
-        .then(() => {
-          Router.push("/dashboard/enumerators");
-        });
-      return true;
-    } catch (error) {
-      console.log(error);
-      return false;
+    if (this.auth.currentUser) {
+      try {
+        await firebase
+          .firestore()
+          .collection("enumerators")
+          .add({
+            name: name,
+            address: address,
+            phone: phone,
+            email: email,
+            nid: nid,
+            banking: {
+              nis: nis,
+              tin: tin,
+              bank: bank,
+              branch: branch,
+              account: account,
+            },
+            role: role,
+            senior: senior,
+            supervisor: supervisor,
+            ed: firebase.firestore.FieldValue.arrayUnion(ed),
+            enum_parish: enum_parish,
+            status: status,
+            contract: contract,
+            oath: oath,
+            id: enumId,
+            transport: transport,
+            tablet: tablet,
+            mass_ed: firebase.firestore.FieldValue.arrayUnion(mass_ed),
+            // time_stamp: firebase.firestore.FieldValue.serverTimestamp(),
+          })
+          .then(() => {
+            Router.push("/dashboard/enumerators");
+          });
+        return true;
+      } catch (error) {
+        console.log(error);
+        return false;
+      }
     }
   }
 
@@ -239,47 +261,57 @@ class Firebase {
     account,
     role,
     senior,
+    enumerating,
+    ed,
+    enum_parish,
     status,
     contract,
     oath,
     enumId,
     transport,
     tablet,
+    mass_ed,
   }) {
-    try {
-      await firebase
-        .firestore()
-        .collection("supervisors")
-        .add({
-          name: name,
-          address: address,
-          phone: phone,
-          email: email,
-          nid: nid,
-          banking: {
-            nis: nis,
-            tin: tin,
-            bank: bank,
-            branch: branch,
-            account: account,
-          },
-          role: role,
-          senior: senior,
-          status: status,
-          contract: contract,
-          oath: oath,
-          id: enumId,
-          transport: transport,
-          tablet: tablet,
-          // time_stamp: firebase.firestore.FieldValue.serverTimestamp(),
-        })
-        .then(() => {
-          Router.push("/dashboard/supervisors");
-        });
-      return true;
-    } catch (error) {
-      console.log(error);
-      return false;
+    if (this.auth.currentUser) {
+      try {
+        await firebase
+          .firestore()
+          .collection("supervisors")
+          .add({
+            name: name,
+            address: address,
+            phone: phone,
+            email: email,
+            nid: nid,
+            banking: {
+              nis: nis,
+              tin: tin,
+              bank: bank,
+              branch: branch,
+              account: account,
+            },
+            role: role,
+            senior: senior,
+            enumerating: enumerating,
+            ed: firebase.firestore.FieldValue.arrayUnion(ed),
+            enum_parish: enum_parish,
+            status: status,
+            contract: contract,
+            oath: oath,
+            id: enumId,
+            transport: transport,
+            tablet: tablet,
+            mass_ed: firebase.firestore.FieldValue.arrayUnion(mass_ed),
+            // time_stamp: firebase.firestore.FieldValue.serverTimestamp(),
+          })
+          .then(() => {
+            Router.push("/dashboard/supervisors");
+          });
+        return true;
+      } catch (error) {
+        console.log(error);
+        return false;
+      }
     }
   }
 
@@ -325,12 +357,14 @@ class Firebase {
       senior,
       supervisor,
       ed,
+      enum_parish,
       status,
       contract,
       oath,
       enumId,
       transport,
       tablet,
+      mass_ed,
     }
   ) {
     try {
@@ -355,12 +389,15 @@ class Firebase {
           senior: senior,
           supervisor: supervisor,
           ed: firebase.firestore.FieldValue.arrayUnion(ed),
+          enum_parish: enum_parish,
           status: status,
           contract: contract,
           oath: oath,
           id: enumId,
           transport: transport,
           tablet: tablet,
+          mass_ed: firebase.firestore.FieldValue.arrayUnion(mass_ed),
+
           // time_stamp: firebase.firestore.FieldValue.serverTimestamp(),
         })
         .then(() => {

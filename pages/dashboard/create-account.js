@@ -22,7 +22,7 @@ export default function CreateUser() {
         <div className='flex items-center justify_center'>
           <form
             name='login'
-            className='border w-80 lg:w-96 mx-auto rounded-lg shadow-md p-4 flex flex-col space-y-4'>
+            className='dark:bg-gray-600  text-gray-100 border w-80 lg:w-96 mx-auto rounded-lg shadow-md p-4 flex flex-col space-y-4'>
             <div className='hidden md:flex justify-center items-center'>
               <img src='/img/logo.png' alt='logo' className='w-2/4' />
             </div>
@@ -42,7 +42,7 @@ export default function CreateUser() {
                       message: "You must enter your name",
                     },
                   })}
-                  className={`bg-gray-100 p-2 rounded-lg border w-full ${
+                  className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
                     errors.name ? "border-red-500" : null
                   }`}
                 />
@@ -69,7 +69,7 @@ export default function CreateUser() {
                       message: "Email must have organization suffix",
                     },
                   })}
-                  className={`bg-gray-100 p-2 rounded-lg border w-full ${
+                  className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
                     errors.name ? "border-red-500" : null
                   }`}
                   type='text'
@@ -86,9 +86,10 @@ export default function CreateUser() {
                 </label>
                 <input
                   name='pass'
-                  className={`bg-gray-100 p-2 rounded-lg border w-full ${
+                  className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
                     errors.name ? "border-red-500" : null
                   }`}
+                  placeholder='New Password'
                   type='password'
                   {...register("pass", {
                     required: {
@@ -105,7 +106,7 @@ export default function CreateUser() {
             <div className='flex flex-col gap-y-2'>
               <button
                 type='submit'
-                className='w-full text-center py-2 rounded-lg bg-blue-500 text-white'
+                className='w-full text-center py-2 rounded-lg transition ease-in-out duration-150 dark:hover:bg-blue-900 dark:bg-blue-800 bg-blue-500 text-white'
                 onClick={handleSubmit(async () => {
                   try {
                     await firebase.register(getValues());

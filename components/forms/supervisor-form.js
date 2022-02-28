@@ -9,6 +9,8 @@ import ShieldCheckIcon from "../icons/shield-check-icon";
 import TaxIcon from "../icons/tax-icon";
 import UserIcon from "../icons/user-icon";
 import ShareIcon from "../icons/share-icon";
+import MapIcon from "../icons/map-icon";
+import ClipboardListIcon from "../icons/clipboard-list-icon";
 import HashtagIcon from "../icons/hashtag-icon";
 import ClipboardIcon from "../icons/clipboard-icon";
 import UserRole from "../icons/user-role";
@@ -16,7 +18,11 @@ import TrendingIcon from "../icons/trending-icon";
 import StatusIcon from "../icons/status-icon";
 import firebase from "../../firebase/firebase";
 import "firebase/compat/firestore";
+import { useState } from "react";
+
 function SupervisorForm(props) {
+  const [visible, setVisible] = useState(false);
+
   const { seniors } = props;
   const {
     register,
@@ -26,11 +32,14 @@ function SupervisorForm(props) {
     reset,
   } = useForm();
 
+  function showFields() {
+    console.log("Value changed");
+  }
   function back() {
     window.history.back();
   }
   return (
-    <div>
+    <div className=''>
       <div className='flex items-center justify-between px-2 lg:px-4 py-2 text-2xl bg-orange-600 text-white font-bold'>
         <h1>Supervisor Form</h1>
       </div>
@@ -41,7 +50,7 @@ function SupervisorForm(props) {
         {/*NAME FIELD*/}
         <div className='px-4 sm:col-span-2 lg:col-span-2'>
           <div className='flex items-center gap-2'>
-            <label htmlFor='Name' title='Name'>
+            <label className='dark:text-gray-300' htmlFor='Name' title='Name'>
               <UserIcon />
             </label>
             <input
@@ -57,7 +66,7 @@ function SupervisorForm(props) {
                   value: /^[a-zA-Z\s-]*$/g,
                 },
               })}
-              className={`bg-gray-100 p-2 rounded-lg border w-full ${
+              className={`bg-gray-100 p-2 rounded-lg  dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
                 errors.name ? "border-red-500" : null
               }`}
             />
@@ -69,7 +78,10 @@ function SupervisorForm(props) {
         {/*ADDRESS FIELD*/}
         <div className='px-4 sm:col-span-2 lg:col-span-2'>
           <div className='flex items-center gap-2'>
-            <label htmlFor='Address' title='Address'>
+            <label
+              className='dark:text-gray-300'
+              htmlFor='Address'
+              title='Address'>
               <LocationIcon />
             </label>
             <input
@@ -82,7 +94,7 @@ function SupervisorForm(props) {
                   message: "Enter enumerator address",
                 },
               })}
-              className={`bg-gray-100 p-2 rounded-lg border w-full ${
+              className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
                 errors.name ? "border-red-500" : null
               }`}
             />
@@ -94,7 +106,7 @@ function SupervisorForm(props) {
         {/*PHONE FIELD*/}
         <div className='px-4 sm:col-span-2  lg:col-span-2'>
           <div className='flex items-center gap-2'>
-            <label htmlFor='Phone' title='Phone'>
+            <label className='dark:text-gray-300' htmlFor='Phone' title='Phone'>
               <DeviceMobileIcon />
             </label>
             <input
@@ -111,7 +123,7 @@ function SupervisorForm(props) {
                   message: "Incorrect format 123-4567",
                 },
               })}
-              className={`bg-gray-100 p-2 rounded-lg border w-full ${
+              className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
                 errors.name ? "border-red-500" : null
               }`}
             />
@@ -123,7 +135,7 @@ function SupervisorForm(props) {
         {/*EMAIL FIELD*/}
         <div className='px-4 sm:col-span-2 lg:col-span-2'>
           <div className='flex items-center gap-2'>
-            <label htmlFor='Email' title='Email'>
+            <label className='dark:text-gray-300' htmlFor='Email' title='Email'>
               <EnvelopeIcon />
             </label>
             <input
@@ -140,7 +152,7 @@ function SupervisorForm(props) {
                   message: "This needs to be a valid email address",
                 },
               })}
-              className={`bg-gray-100 p-2 rounded-lg border w-full ${
+              className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
                 errors.name ? "border-red-500" : null
               }`}
             />
@@ -152,7 +164,10 @@ function SupervisorForm(props) {
         {/*NATIONAL ID FIELD*/}
         <div className='px-4 sm:col-span-2 lg:col-span-2'>
           <div className='flex items-center gap-2'>
-            <label htmlFor='National ID' title='National ID'>
+            <label
+              className='dark:text-gray-300'
+              htmlFor='National ID'
+              title='National ID'>
               <IdentityIcon />
             </label>
             <input
@@ -173,7 +188,7 @@ function SupervisorForm(props) {
                   message: "ID must be 11 characters length",
                 },
               })}
-              className={`bg-gray-100 p-2 rounded-lg border w-full ${
+              className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
                 errors.name ? "border-red-500" : null
               }`}
             />
@@ -186,7 +201,10 @@ function SupervisorForm(props) {
         {/*NATIONAL INSURANCE FIELD*/}
         <div className='px-4 sm:col-span-2 lg:col-span-2'>
           <div className='flex items-center gap-2'>
-            <label htmlFor='National Insurance' title='National Insurance'>
+            <label
+              className='dark:text-gray-300'
+              htmlFor='National Insurance'
+              title='National Insurance'>
               <ShieldCheckIcon />
             </label>
             <input
@@ -202,7 +220,7 @@ function SupervisorForm(props) {
                   message: "NIS# must be 6 digits",
                 },
               })}
-              className={`bg-gray-100 p-2 rounded-lg border w-full ${
+              className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
                 errors.name ? "border-red-500" : null
               }`}
             />
@@ -213,6 +231,7 @@ function SupervisorForm(props) {
         <div className='px-4 sm:col-span-2 lg:col-span-2'>
           <div className='flex items-center gap-2'>
             <label
+              className='dark:text-gray-300'
               htmlFor='Tax Identification Number'
               title='Tax Identification Number'>
               <TaxIcon />
@@ -230,7 +249,7 @@ function SupervisorForm(props) {
                   message: "TIN must be 13 digits ",
                 },
               })}
-              className={`bg-gray-100 p-2 rounded-lg border w-full ${
+              className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
                 errors.name ? "border-red-500" : null
               }`}
             />
@@ -240,7 +259,7 @@ function SupervisorForm(props) {
         {/*BANK*/}
         <div className='px-4 sm:col-span-2 lg:col-span-2'>
           <div className='flex items-center gap-2'>
-            <label htmlFor='Bank' title='Bank'>
+            <label className='dark:text-gray-300' htmlFor='Bank' title='Bank'>
               <BuildingIcon />
             </label>
             <input
@@ -252,7 +271,7 @@ function SupervisorForm(props) {
                   value: false,
                 },
               })}
-              className={`bg-gray-100 p-2 rounded-lg border w-full ${
+              className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
                 errors.name ? "border-red-500" : null
               }`}
             />
@@ -264,7 +283,10 @@ function SupervisorForm(props) {
         {/*BRANCH*/}
         <div className='px-4 sm:col-span-2 lg:col-span-2'>
           <div className='flex items-center gap-2'>
-            <label htmlFor='Branch' title='Branch'>
+            <label
+              className='dark:text-gray-300'
+              htmlFor='Branch'
+              title='Branch'>
               <ShareIcon />
             </label>
             <input
@@ -276,7 +298,7 @@ function SupervisorForm(props) {
                   value: false,
                 },
               })}
-              className={`bg-gray-100 p-2 rounded-lg border w-full ${
+              className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
                 errors.name ? "border-red-500" : null
               }`}
             />
@@ -288,7 +310,10 @@ function SupervisorForm(props) {
         {/*BANK ACCOUNT*/}
         <div className='px-4 sm:col-span-2 lg:col-span-2'>
           <div className='flex items-center gap-2'>
-            <label htmlFor='Bank Account' title='Bank Account'>
+            <label
+              className='dark:text-gray-300'
+              htmlFor='Bank Account'
+              title='Bank Account'>
               <HashtagIcon />
             </label>
             <input
@@ -304,7 +329,7 @@ function SupervisorForm(props) {
                   message: "Account number must be digits",
                 },
               })}
-              className={`bg-gray-100 p-2 rounded-lg border w-full ${
+              className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
                 errors.name ? "border-red-500" : null
               }`}
             />
@@ -330,7 +355,7 @@ function SupervisorForm(props) {
         <div className='px-4 sm:col-span-2 lg:col-span-2'>
           <div className='flex items-center gap-2'>
             <label
-              className='flex font-bold'
+              className='dark:text-gray-300 flex font-bold'
               htmlFor='Senior Supervisor'
               title='Senior Supervisor'>
               <UserRole />
@@ -343,7 +368,7 @@ function SupervisorForm(props) {
                   message: "Select designated Senior",
                 },
               })}
-              className={`bg-gray-100 p-2 rounded-lg border w-full ${
+              className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
                 errors.name ? "border-red-500" : null
               }`}>
               <option value=''>Select Senior</option>
@@ -359,10 +384,118 @@ function SupervisorForm(props) {
           </div>
         </div>
 
+        {/*IS ENUMERATING*/}
+        <div className='px-4 py-2 sm:col-span-1 lg:col-span-1'>
+          <div className='flex items-center gap-2'>
+            <label
+              className='dark:text-gray-300 flex font-bold'
+              htmlFor='Supervisor-Enumerator'
+              title='Supervisor-Enumerator'>
+              <ClipboardListIcon /> Enumerating?
+            </label>
+            <input
+              type='checkbox'
+              name='enumerating'
+              onClick={() => {
+                visible ? setVisible(false) : setVisible(true);
+              }}
+              {...register("enumerating", {
+                required: {
+                  value: false,
+                },
+              })}
+              className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
+                errors.name ? "border-red-500" : null
+              }`}
+            />
+            {/* <option value='No'>No</option>
+              <option onSelectCapture={showFields} value='Yes'>
+                Yes
+              </option>
+            </select> */}
+          </div>
+        </div>
+        {/*ED*/}
+        <div className={`px-4 lg:col-span-1 ${visible ? "block" : "hidden"}`}>
+          <div className='flex items-center gap-2'>
+            <label
+              className='dark:text-gray-300 flex font-bold'
+              htmlFor='ED'
+              title='ED'>
+              <MapIcon />
+            </label>
+            <input
+              name='ed'
+              type='text'
+              placeholder='ED#'
+              {...register("ed", {
+                required: {
+                  value: false,
+                },
+                pattern: {
+                  value: /^\d+$/,
+                  message: "ED must be digits. e.g.(000)",
+                },
+                maxLength: {
+                  value: 3,
+                  message: "ED must be 3 digits",
+                },
+                minLength: {
+                  value: 3,
+                  message: "ED must be 3 digits",
+                },
+              })}
+              className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
+                errors.name ? "border-red-500" : null
+              }`}
+            />
+            <div className='text-red-500 font-medium'>
+              {errors?.ed?.message}
+            </div>
+          </div>
+        </div>
+        {/*PARISH ENUMERATED */}
+        <div className={`px-4 lg:col-span-1 ${visible ? "block" : "hidden"}`}>
+          <div className='flex items-center gap-2 w-full'>
+            <label
+              className='dark:text-gray-300 flex font-bold'
+              htmlFor='Parish enumerated'
+              title='Parish enumerated'>
+              <MapIcon />
+            </label>
+            <select
+              name='enum_parish'
+              {...register("enum_parish", {
+                required: {
+                  value: true,
+                  message: "Select active parish",
+                },
+              })}
+              className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
+                errors.name ? "border-red-500" : null
+              }`}>
+              <option value=''>Select Active Parish</option>
+              <option value='St. Michael'>St. Michael</option>
+              <option value='Christ Church'>Christ Church</option>
+              <option value='St. George'>St. George</option>
+              <option value='St. Philip'>St. Philip</option>
+              <option value='St. John'>St. John</option>
+              <option value='St. James'>St. James</option>
+              <option value='St. Thomas'>St. Thomas</option>
+              <option value='St. Joseph'>St. Joseph</option>
+              <option value='St. Andrew'>St. Andrew</option>
+              <option value='St. Peter'>St. Peter</option>
+              <option value='St. Lucy'>St. Lucy</option>
+            </select>
+          </div>
+        </div>
         {/*STATUS*/}
         <div className='px-4 sm:col-span-2 lg:col-span-1'>
           <div className='flex items-center gap-2'>
-            <label className='flex font-bold' htmlFor='Status' title='Status'>
+            <label
+              className='dark:text-gray-300 flex font-bold'
+              htmlFor='Status'
+              title='Status'>
               <StatusIcon />
             </label>
             <select
@@ -373,7 +506,7 @@ function SupervisorForm(props) {
                   message: "Select status",
                 },
               })}
-              className={`bg-gray-100 p-2 rounded-lg border w-full ${
+              className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
                 errors.name ? "border-red-500" : null
               }`}>
               <option value=''>Choose Status</option>
@@ -389,14 +522,15 @@ function SupervisorForm(props) {
           </div>
         </div>
 
-        <div className='px-4 flex gap-1 sm:col-span-4 lg:col-span-3'>
+        <div className='px-4 flex sm:col-span-4 lg:col-span-3 flex-wrap gap-2'>
           {/*CONTRACT*/}
           <div className='flex items-center gap-2'>
             <label
-              className='flex font-bold'
+              className='dark:text-gray-300 flex font-bold'
               htmlFor='Contract'
               title='Contract'>
-              <ClipboardIcon /> Contract
+              <ClipboardIcon />
+              Ctract
             </label>
             <select
               name='contract'
@@ -405,7 +539,7 @@ function SupervisorForm(props) {
                   value: true,
                 },
               })}
-              className={`bg-gray-100 p-2 rounded-lg border w-full ${
+              className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
                 errors.name ? "border-red-500" : null
               }`}>
               <option value='No'>No</option>
@@ -414,7 +548,10 @@ function SupervisorForm(props) {
           </div>
           {/*OATH*/}
           <div className='flex items-center gap-2'>
-            <label className='flex font-bold' htmlFor='Oath' title='Oath'>
+            <label
+              className='dark:text-gray-300 flex font-bold'
+              htmlFor='Oath'
+              title='Oath'>
               <ClipboardIcon /> Oath
             </label>
             <select
@@ -424,7 +561,7 @@ function SupervisorForm(props) {
                   value: true,
                 },
               })}
-              className={`bg-gray-100 p-2 rounded-lg border w-full ${
+              className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
                 errors.name ? "border-red-500" : null
               }`}>
               <option value='No'>No</option>
@@ -434,7 +571,7 @@ function SupervisorForm(props) {
           {/*SUPERVISOR ID */}
           <div className='flex items-center gap-2'>
             <label
-              className='flex font-bold'
+              className='dark:text-gray-300 flex font-bold'
               htmlFor="Enumerator's ID"
               title="Enumerator's ID">
               <IdentityIcon /> ID
@@ -446,7 +583,7 @@ function SupervisorForm(props) {
                   value: true,
                 },
               })}
-              className={`bg-gray-100 p-2 rounded-lg border w-full ${
+              className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
                 errors.name ? "border-red-500" : null
               }`}>
               <option value='No'>No</option>
@@ -458,7 +595,7 @@ function SupervisorForm(props) {
           {/*TRANSPORTATION */}
           <div className='flex items-center gap-2'>
             <label
-              className='flex font-bold'
+              className='dark:text-gray-300 flex font-bold'
               htmlFor='Transport'
               title='Transport'>
               <TrendingIcon /> Transportation
@@ -470,7 +607,7 @@ function SupervisorForm(props) {
                   value: true,
                 },
               })}
-              className={`bg-gray-100 p-2 rounded-lg border w-full ${
+              className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
                 errors.name ? "border-red-500" : null
               }`}>
               <option value='No'>No</option>
@@ -479,10 +616,10 @@ function SupervisorForm(props) {
           </div>
         </div>
         {/*TABLET ID*/}
-        <div className='px-4 flex gap-1 lg:col-span-2'>
-          <div className='flex items-center gap-2'>
+        <div className='px-4 flex gap-1 sm:col-span-2 lg:col-span-2'>
+          <div className='flex items-center gap-2 w-full'>
             <label
-              className='flex font-bold'
+              className='dark:text-gray-300 flex font-bold'
               htmlFor='Tablet'
               title='Tablet Serial Code'>
               <DeviceMobileIcon />
@@ -509,7 +646,54 @@ function SupervisorForm(props) {
                   message: "Serial codes are 11 digits long",
                 },
               })}
-              className={`bg-gray-100 p-2 rounded-lg border w-full ${
+              className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
+                errors.name ? "border-red-500" : null
+              }`}
+            />
+            <div className='text-red-500 font-medium'>
+              {errors?.ed?.message}
+            </div>
+          </div>
+        </div>
+
+        <div
+          className={`bg-blue-600 text-white sm:col-span-4 lg:col-span-6 border-b border-t py-2 px-4 ${
+            visible ? "block" : "hidden"
+          }`}>
+          <h1 className='font-bold'>Mass Enumeration</h1>
+        </div>
+
+        {/*MASS ED*/}
+        <div className={`px-4 sm:col-span-2 ${visible ? "block" : "hidden"}`}>
+          <div className='flex items-center gap-2'>
+            <label
+              className='dark:text-gray-300 flex font-bold'
+              htmlFor='ED'
+              title='ED'>
+              <MapIcon />
+            </label>
+            <input
+              name='mass_ed'
+              type='text'
+              placeholder='Mass enumeration ED#'
+              {...register("mass_ed", {
+                required: {
+                  value: false,
+                },
+                pattern: {
+                  value: /^\d+$/,
+                  message: "ED must be digits. e.g.(000)",
+                },
+                maxLength: {
+                  value: 3,
+                  message: "ED must be 3 digits",
+                },
+                minLength: {
+                  value: 3,
+                  message: "ED must be 3 digits",
+                },
+              })}
+              className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
                 errors.name ? "border-red-500" : null
               }`}
             />

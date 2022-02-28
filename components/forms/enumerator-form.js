@@ -34,7 +34,7 @@ function EnumeratorForm(props) {
     window.history.back();
   }
   return (
-    <div>
+    <div className=''>
       <div className='flex items-center justify-between px-2 lg:px-4 py-2 text-2xl bg-pink-600 text-white font-bold'>
         <h1>Enumerator Form</h1>
       </div>
@@ -46,7 +46,7 @@ function EnumeratorForm(props) {
         {/*NAME FIELD*/}
         <div className='px-4 lg:col-span-2'>
           <div className='flex items-center gap-2'>
-            <label htmlFor='Name' title='Name'>
+            <label className='dark:text-gray-300' htmlFor='Name' title='Name'>
               <UserIcon />
             </label>
             <input
@@ -62,7 +62,7 @@ function EnumeratorForm(props) {
                   value: /^[a-zA-Z\s-]*$/g,
                 },
               })}
-              className={`bg-gray-100 p-2 rounded-lg border w-full ${
+              className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
                 errors.name ? "border-red-500" : null
               }`}
             />
@@ -74,7 +74,10 @@ function EnumeratorForm(props) {
         {/*ADDRESS FIELD*/}
         <div className='px-4 lg:col-span-2'>
           <div className='flex items-center gap-2'>
-            <label htmlFor='Address' title='Address'>
+            <label
+              className='dark:text-gray-300'
+              htmlFor='Address'
+              title='Address'>
               <LocationIcon />
             </label>
             <input
@@ -87,7 +90,7 @@ function EnumeratorForm(props) {
                   message: "Missing enumerator's address",
                 },
               })}
-              className={`bg-gray-100 p-2 rounded-lg border w-full ${
+              className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
                 errors.name ? "border-red-500" : null
               }`}
             />
@@ -99,7 +102,7 @@ function EnumeratorForm(props) {
         {/*PHONE FIELD*/}
         <div className='px-4 lg:col-span-2'>
           <div className='flex items-center gap-2'>
-            <label htmlFor='Phone' title='Phone'>
+            <label className='dark:text-gray-300' htmlFor='Phone' title='Phone'>
               <DeviceMobileIcon />
             </label>
             <input
@@ -116,7 +119,7 @@ function EnumeratorForm(props) {
                   message: "Incorrect format. 123-4567",
                 },
               })}
-              className={`bg-gray-100 p-2 rounded-lg border w-full ${
+              className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
                 errors.name ? "border-red-500" : null
               }`}
             />
@@ -128,7 +131,7 @@ function EnumeratorForm(props) {
         {/*EMAIL FIELD*/}
         <div className='px-4 lg:col-span-2'>
           <div className='flex items-center gap-2'>
-            <label htmlFor='Email' title='Email'>
+            <label className='dark:text-gray-300' htmlFor='Email' title='Email'>
               <EnvelopeIcon />
             </label>
             <input
@@ -145,7 +148,7 @@ function EnumeratorForm(props) {
                   message: "Email Invalid",
                 },
               })}
-              className={`bg-gray-100 p-2 rounded-lg border w-full ${
+              className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
                 errors.name ? "border-red-500" : null
               }`}
             />
@@ -157,7 +160,10 @@ function EnumeratorForm(props) {
         {/*NATIONAL ID FIELD*/}
         <div className='px-4 lg:col-span-2'>
           <div className='flex items-center gap-2'>
-            <label htmlFor='National ID' title='National ID'>
+            <label
+              className='dark:text-gray-300'
+              htmlFor='National ID'
+              title='National ID'>
               <IdentityIcon />
             </label>
             <input
@@ -178,7 +184,7 @@ function EnumeratorForm(props) {
                   message: "ID must be 11 characters length",
                 },
               })}
-              className={`bg-gray-100 p-2 rounded-lg border w-full ${
+              className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
                 errors.name ? "border-red-500" : null
               }`}
             />
@@ -191,7 +197,10 @@ function EnumeratorForm(props) {
         {/*NATIONAL INSURANCE FIELD*/}
         <div className='px-4 lg:col-span-2'>
           <div className='flex items-center gap-2'>
-            <label htmlFor='National Insurance' title='National Insurance'>
+            <label
+              htmlFor='National Insurance'
+              title='National Insurance'
+              className='dark:text-gray-300'>
               <ShieldCheckIcon />
             </label>
             <input
@@ -207,7 +216,7 @@ function EnumeratorForm(props) {
                   message: "NIS# must be 6 digits",
                 },
               })}
-              className={`bg-gray-100 p-2 rounded-lg border w-full ${
+              className={`bg-gray-100  p-2 rounded-lg border dark:bg-gray-400 dark:placeholder:text-gray-700 w-full ${
                 errors.name ? "border-red-500" : null
               }`}
             />
@@ -219,7 +228,8 @@ function EnumeratorForm(props) {
           <div className='flex items-center gap-2'>
             <label
               htmlFor='Tax Identification Number'
-              title='Tax Identification Number'>
+              title='Tax Identification Number'
+              className='dark:text-gray-300'>
               <TaxIcon />
             </label>
             <input
@@ -235,7 +245,7 @@ function EnumeratorForm(props) {
                   message: "TIN must be 13 digits ",
                 },
               })}
-              className={`bg-gray-100 p-2 rounded-lg border w-full ${
+              className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
                 errors.name ? "border-red-500" : null
               }`}
             />
@@ -245,7 +255,7 @@ function EnumeratorForm(props) {
         {/*BANK*/}
         <div className='px-4 lg:col-span-2'>
           <div className='flex items-center gap-2'>
-            <label htmlFor='Bank' title='Bank'>
+            <label htmlFor='Bank' title='Bank' className='dark:text-gray-300'>
               <BuildingIcon />
             </label>
             <input
@@ -257,7 +267,7 @@ function EnumeratorForm(props) {
                   value: false,
                 },
               })}
-              className={`bg-gray-100 p-2 rounded-lg border w-full ${
+              className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
                 errors.name ? "border-red-500" : null
               }`}
             />
@@ -269,7 +279,10 @@ function EnumeratorForm(props) {
         {/*BRANCH*/}
         <div className='px-4 lg:col-span-2'>
           <div className='flex items-center gap-2'>
-            <label htmlFor='Branch' title='Branch'>
+            <label
+              htmlFor='Branch'
+              title='Branch'
+              className='dark:text-gray-300'>
               <ShareIcon />
             </label>
             <input
@@ -281,7 +294,7 @@ function EnumeratorForm(props) {
                   value: false,
                 },
               })}
-              className={`bg-gray-100 p-2 rounded-lg border w-full ${
+              className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
                 errors.name ? "border-red-500" : null
               }`}
             />
@@ -293,7 +306,10 @@ function EnumeratorForm(props) {
         {/*BANK ACCOUNT*/}
         <div className='px-4 lg:col-span-2'>
           <div className='flex items-center gap-2'>
-            <label htmlFor='Bank Account' title='Bank Account'>
+            <label
+              htmlFor='Bank Account'
+              title='Bank Account'
+              className='dark:text-gray-300'>
               <HashtagIcon />
             </label>
             <input
@@ -309,7 +325,7 @@ function EnumeratorForm(props) {
                   message: "Account number must be digits",
                 },
               })}
-              className={`bg-gray-100 p-2 rounded-lg border w-full ${
+              className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
                 errors.name ? "border-red-500" : null
               }`}
             />
@@ -335,7 +351,7 @@ function EnumeratorForm(props) {
         <div className='px-4 lg:col-span-2'>
           <div className='flex items-center gap-2'>
             <label
-              className='flex font-bold'
+              className='dark:text-gray-300 flex font-bold'
               htmlFor='Senior Supervisor'
               title='Senior Supervisor'>
               <UserRole />
@@ -348,7 +364,7 @@ function EnumeratorForm(props) {
                   message: "Select designated Senior",
                 },
               })}
-              className={`bg-gray-100 p-2 rounded-lg border w-full ${
+              className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
                 errors.name ? "border-red-500" : null
               }`}>
               <option value=''>Select Senior</option>
@@ -367,7 +383,7 @@ function EnumeratorForm(props) {
         <div className='px-4 lg:col-span-2'>
           <div className='flex items-center gap-2'>
             <label
-              className='flex font-bold'
+              className='dark:text-gray-300 flex font-bold'
               htmlFor='Supervisor'
               title='Supervisor'>
               <UserIcon />
@@ -380,7 +396,7 @@ function EnumeratorForm(props) {
                   message: "Select designated Supervisor",
                 },
               })}
-              className={`bg-gray-100 p-2 rounded-lg border w-full ${
+              className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
                 errors.name ? "border-red-500" : null
               }`}>
               <option value=''>Select Supervisor</option>
@@ -396,9 +412,12 @@ function EnumeratorForm(props) {
           </div>
         </div>
         {/*ED*/}
-        <div className='px-4 py-2 lg:col-span-1'>
+        <div className='px-4 lg:col-span-1'>
           <div className='flex items-center gap-2'>
-            <label className='flex font-bold' htmlFor='ED' title='ED'>
+            <label
+              className='dark:text-gray-300 flex font-bold'
+              htmlFor='ED'
+              title='ED'>
               <MapIcon />
             </label>
             <input
@@ -422,7 +441,7 @@ function EnumeratorForm(props) {
                   message: "ED must be 3 digits",
                 },
               })}
-              className={`bg-gray-100 p-2 rounded-lg border w-full ${
+              className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
                 errors.name ? "border-red-500" : null
               }`}
             />
@@ -431,10 +450,49 @@ function EnumeratorForm(props) {
             </div>
           </div>
         </div>
+        {/*PARISH ENUMERATED */}
+        <div className='px-4 flex lg:col-span-1'>
+          <div className='flex items-center gap-2 w-full'>
+            <label
+              className='dark:text-gray-300 flex font-bold'
+              htmlFor='Parish enumerated'
+              title='Parish enumerated'>
+              <MapIcon />
+            </label>
+            <select
+              name='enum_parish'
+              {...register("enum_parish", {
+                required: {
+                  value: true,
+                  message: "Select active parish",
+                },
+              })}
+              className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
+                errors.name ? "border-red-500" : null
+              }`}>
+              <option value=''>Select Active Parish</option>
+              <option value='Not Assigned'>Not Assigned</option>
+              <option value='St. Michael'>St. Michael</option>
+              <option value='Christ Church'>Christ Church</option>
+              <option value='St. George'>St. George</option>
+              <option value='St. Philip'>St. Philip</option>
+              <option value='St. John'>St. John</option>
+              <option value='St. James'>St. James</option>
+              <option value='St. Thomas'>St. Thomas</option>
+              <option value='St. Joseph'>St. Joseph</option>
+              <option value='St. Andrew'>St. Andrew</option>
+              <option value='St. Peter'>St. Peter</option>
+              <option value='St. Lucy'>St. Lucy</option>
+            </select>
+          </div>
+        </div>
         {/*STATUS*/}
-        <div className='px-4 py-2 lg:col-span-1'>
+        <div className='px-4 lg:col-span-1'>
           <div className='flex items-center gap-2'>
-            <label className='flex font-bold' htmlFor='Status' title='Status'>
+            <label
+              className='dark:text-gray-300 flex font-bold'
+              htmlFor='Status'
+              title='Status'>
               <StatusIcon />
             </label>
             <select
@@ -445,7 +503,7 @@ function EnumeratorForm(props) {
                   message: "Select status",
                 },
               })}
-              className={`bg-gray-100 p-2 rounded-lg border w-full ${
+              className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
                 errors.name ? "border-red-500" : null
               }`}>
               <option value=''>Choose Status</option>
@@ -465,7 +523,7 @@ function EnumeratorForm(props) {
           {/*CONTRACT*/}
           <div className='flex items-center gap-2'>
             <label
-              className='flex font-bold'
+              className='dark:text-gray-300 flex font-bold'
               htmlFor='Contract'
               title='Contract'>
               <ClipboardIcon /> Contract
@@ -477,7 +535,7 @@ function EnumeratorForm(props) {
                   value: true,
                 },
               })}
-              className={`bg-gray-100 p-2 rounded-lg border w-full ${
+              className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
                 errors.name ? "border-red-500" : null
               }`}>
               <option value='No'>No</option>
@@ -486,7 +544,10 @@ function EnumeratorForm(props) {
           </div>
           {/*OATH*/}
           <div className='flex items-center gap-2'>
-            <label className='flex font-bold' htmlFor='Oath' title='Oath'>
+            <label
+              className='dark:text-gray-300 flex font-bold'
+              htmlFor='Oath'
+              title='Oath'>
               <ClipboardIcon /> Oath
             </label>
             <select
@@ -496,7 +557,7 @@ function EnumeratorForm(props) {
                   value: true,
                 },
               })}
-              className={`bg-gray-100 p-2 rounded-lg border w-full ${
+              className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
                 errors.name ? "border-red-500" : null
               }`}>
               <option value='No'>No</option>
@@ -508,7 +569,7 @@ function EnumeratorForm(props) {
           {/*ENUMERATOR ID */}
           <div className='flex items-center gap-2'>
             <label
-              className='flex font-bold'
+              className='dark:text-gray-300 flex font-bold'
               htmlFor="Enumerator's ID"
               title="Enumerator's ID">
               <IdentityIcon /> ID
@@ -520,7 +581,7 @@ function EnumeratorForm(props) {
                   value: true,
                 },
               })}
-              className={`bg-gray-100 p-2 rounded-lg border w-full ${
+              className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
                 errors.name ? "border-red-500" : null
               }`}>
               <option value='No'>No</option>
@@ -530,7 +591,7 @@ function EnumeratorForm(props) {
           {/*TRANSPORTATION */}
           <div className='flex items-center gap-2'>
             <label
-              className='flex font-bold'
+              className='dark:text-gray-300 flex font-bold'
               htmlFor='Transport'
               title='Transport'>
               <TrendingIcon /> Transportation
@@ -542,7 +603,7 @@ function EnumeratorForm(props) {
                   value: true,
                 },
               })}
-              className={`bg-gray-100 p-2 rounded-lg border w-full ${
+              className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
                 errors.name ? "border-red-500" : null
               }`}>
               <option value='No'>No</option>
@@ -552,9 +613,9 @@ function EnumeratorForm(props) {
         </div>
         {/*TABLET ID*/}
         <div className='px-4 flex gap-1 lg:col-span-2'>
-          <div className='flex items-center gap-2'>
+          <div className='flex items-center gap-2 w-full'>
             <label
-              className='flex font-bold'
+              className='dark:text-gray-300 flex font-bold'
               htmlFor='Tablet'
               title='Tablet Serial Code'>
               <DeviceMobileIcon />
@@ -581,7 +642,7 @@ function EnumeratorForm(props) {
                   message: "Serial codes are 11 digits long",
                 },
               })}
-              className={`bg-gray-100 p-2 rounded-lg border w-full ${
+              className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
                 errors.name ? "border-red-500" : null
               }`}
             />
@@ -590,6 +651,50 @@ function EnumeratorForm(props) {
             </div>
           </div>
         </div>
+
+        <div className='bg-blue-600 text-white sm:col-span-2 lg:col-span-6 border-b border-t py-2 px-4'>
+          <h1 className='font-bold'>Mass Enumeration</h1>
+        </div>
+        {/*MASS ED*/}
+        <div className='px-4 lg:col-span-1'>
+          <div className='flex items-center gap-2'>
+            <label
+              className='dark:text-gray-300 flex font-bold'
+              htmlFor='ED'
+              title='ED'>
+              <MapIcon />
+            </label>
+            <input
+              name='mass_ed'
+              type='text'
+              placeholder='Mass enumeration ED#'
+              {...register("mass_ed", {
+                required: {
+                  value: false,
+                },
+                pattern: {
+                  value: /^\d+$/,
+                  message: "ED must be digits. e.g.(000)",
+                },
+                maxLength: {
+                  value: 3,
+                  message: "ED must be 3 digits",
+                },
+                minLength: {
+                  value: 3,
+                  message: "ED must be 3 digits",
+                },
+              })}
+              className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
+                errors.name ? "border-red-500" : null
+              }`}
+            />
+            <div className='text-red-500 font-medium'>
+              {errors?.ed?.message}
+            </div>
+          </div>
+        </div>
+
         {/*SUBMIT*/}
         <div className='px-3 py-2 sm:col-span-2 lg:col-span-6 border-t'>
           <div className='flex items-center gap-2 '>

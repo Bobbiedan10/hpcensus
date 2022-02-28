@@ -10,7 +10,7 @@ function Profile() {
   return (
     <Layout>
       <div className='mt-14 mx-auto max-w-7xl p-2 space-y-4'>
-        <div className='flex items-center justify-between py-2 border-b'>
+        <div className='dark:bg-gray-400  px-2 flex items-center justify-between py-2 border-b'>
           <h1 className='text-lg'>Profile</h1>
           <Link href='/dashboard/create-account'>
             <a className='py-2 px-2 text-white bg-blue-500 rounded-lg'>
@@ -19,8 +19,8 @@ function Profile() {
           </Link>
         </div>
 
-        <div className='md:flex'>
-          <div className='border rounded-lg text-left shadow'>
+        <div className='md:flextext-gray-200'>
+          <div className='border dark:bg-gray-500 dark:text-gray-200 rounded-lg text-left shadow'>
             <div className='p-2 flex items-center gap-2'>
               <b>
                 <UserIcon />

@@ -20,7 +20,7 @@ function SeniorForm(props) {
     window.history.back();
   }
   return (
-    <div>
+    <div className=''>
       <div className='flex items-center justify-between px-2 lg:px-4 py-2 text-2xl bg-yellow-500 text-white font-bold'>
         <h1>Senior Supervisor Form</h1>
       </div>
@@ -31,7 +31,7 @@ function SeniorForm(props) {
         {/*NAME FIELD*/}
         <div className='px-4 sm:col-span-2 lg:col-span-2'>
           <div className='flex items-center gap-2'>
-            <label htmlFor='Name' title='Name'>
+            <label className='dark:text-gray-300' htmlFor='Name' title='Name'>
               <UserIcon />
             </label>
             <input
@@ -47,7 +47,7 @@ function SeniorForm(props) {
                   value: /^[a-zA-Z\s-]*$/g,
                 },
               })}
-              className={`bg-gray-100 p-2 rounded-lg border w-full ${
+              className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700  border w-full ${
                 errors.name ? "border-red-500" : null
               }`}
             />
@@ -59,7 +59,10 @@ function SeniorForm(props) {
         {/*ADDRESS FIELD*/}
         <div className='px-4 sm:col-span-2 lg:col-span-2'>
           <div className='flex items-center gap-2'>
-            <label htmlFor='Address' title='Address'>
+            <label
+              className='dark:text-gray-300'
+              htmlFor='Address'
+              title='Address'>
               <LocationIcon />
             </label>
             <input
@@ -72,7 +75,7 @@ function SeniorForm(props) {
                   message: "Enter senior's address",
                 },
               })}
-              className={`bg-gray-100 p-2 rounded-lg border w-full ${
+              className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700  border w-full ${
                 errors.name ? "border-red-500" : null
               }`}
             />
@@ -84,7 +87,7 @@ function SeniorForm(props) {
         {/*PHONE FIELD*/}
         <div className='px-4 sm:col-span-2  lg:col-span-2'>
           <div className='flex items-center gap-2'>
-            <label htmlFor='Phone' title='Phone'>
+            <label className='dark:text-gray-300' htmlFor='Phone' title='Phone'>
               <DeviceMobileIcon />
             </label>
             <input
@@ -101,7 +104,7 @@ function SeniorForm(props) {
                   message: "Incorrect format 123-4567",
                 },
               })}
-              className={`bg-gray-100 p-2 rounded-lg border w-full ${
+              className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700  border w-full ${
                 errors.name ? "border-red-500" : null
               }`}
             />
@@ -113,7 +116,7 @@ function SeniorForm(props) {
         {/*EMAIL FIELD*/}
         <div className='px-4 sm:col-span-2 lg:col-span-2'>
           <div className='flex items-center gap-2'>
-            <label htmlFor='Email' title='Email'>
+            <label className='dark:text-gray-300' htmlFor='Email' title='Email'>
               <EnvelopeIcon />
             </label>
             <input
@@ -130,7 +133,7 @@ function SeniorForm(props) {
                   message: "Email Invalid",
                 },
               })}
-              className={`bg-gray-100 p-2 rounded-lg border w-full ${
+              className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700  border w-full ${
                 errors.name ? "border-red-500" : null
               }`}
             />
@@ -156,7 +159,10 @@ function SeniorForm(props) {
         {/*STATUS*/}
         <div className='px-4 sm:col-span-2 lg:col-span-1'>
           <div className='flex items-center gap-2'>
-            <label className='flex font-bold' htmlFor='Status' title='Status'>
+            <label
+              className='dark:text-gray-300 flex font-bold'
+              htmlFor='Status'
+              title='Status'>
               <StatusIcon />
             </label>
             <select
@@ -167,7 +173,7 @@ function SeniorForm(props) {
                   message: "Select status",
                 },
               })}
-              className={`bg-gray-100 p-2 rounded-lg border w-full ${
+              className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700  border w-full ${
                 errors.name ? "border-red-500" : null
               }`}>
               <option value=''>Choose Status</option>
@@ -183,10 +189,10 @@ function SeniorForm(props) {
           </div>
         </div>
         {/*TABLET ID*/}
-        <div className='px-4 flex gap-1 lg:col-span-2'>
+        <div className='px-4 flex gap-1 sm:col-span-2'>
           <div className='flex items-center gap-2'>
             <label
-              className='flex font-bold'
+              className='dark:text-gray-300 flex font-bold'
               htmlFor='Tablet'
               title='Tablet Serial Code'>
               <DeviceMobileIcon />
@@ -213,7 +219,7 @@ function SeniorForm(props) {
                   message: "Serial codes are 11 digits long",
                 },
               })}
-              className={`bg-gray-100 p-2 rounded-lg border w-full ${
+              className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700  border w-full ${
                 errors.name ? "border-red-500" : null
               }`}
             />

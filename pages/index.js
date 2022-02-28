@@ -22,27 +22,27 @@ export default function Login() {
   } = useForm();
 
   return (
-    <div className='flex h-screen justify-center items-center'>
-      <div className='grid lg:grid-cols-2 max-w-7xl p-4'>
+    <div className='flex dark:bg-gray-900 h-screen justify-center items-center'>
+      <div className='grid  lg:grid-cols-2 max-w-7xl p-4'>
         <div className='hidden md:flex justify-center items-center'>
           <img src='img/logo.png' alt='logo' className='w-3/4' />
         </div>
         <div className='flex items-center'>
           <form
             name='login'
-            className='border md:w-2/3 mx-auto rounded-lg shadow-md p-4 flex flex-col space-y-4'>
+            className='border dark:bg-gray-600 md:w-2/3 mx-auto rounded-lg shadow-md p-4 flex flex-col space-y-4'>
             <img
               src='img/logo.png'
               alt='logo'
               className='md:hidden w-2/4 mx-auto'
             />
-            <h1 className='text-center font-bold text-xl '>
+            <h1 className='text-center font-bold text-xl dark:text-gray-300 '>
               Welcome to the Census
               <br /> Field Management System
             </h1>
             <div className='space-y-2 flex flex-col'>
               <div className='flex items-center gap-2'>
-                <label title='Email' className=''>
+                <label title='Email' className='dark:text-gray-300'>
                   <EnvelopeIcon />
                 </label>
                 <input
@@ -58,7 +58,7 @@ export default function Login() {
                       message: "Email must have organization suffix",
                     },
                   })}
-                  className={`bg-gray-100 p-2 rounded-lg border w-full ${
+                  className={`bg-gray-100 p-2 rounded-lg border dark:bg-gray-400 dark:placeholder:text-gray-700 w-full ${
                     errors.name ? "border-red-500" : null
                   }`}
                   type='text'
@@ -70,13 +70,13 @@ export default function Login() {
             </div>
             <div className='space-y-2 flex flex-col'>
               <div className='flex items-center gap-2'>
-                <label title='Password' className=''>
+                <label title='Password' className='dark:text-gray-300'>
                   <KeyIcon />
                 </label>
                 <input
                   name='pass'
                   placeholder='Password'
-                  className={`bg-gray-100 p-2 rounded-lg border w-full ${
+                  className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
                     errors.name ? "border-red-500" : null
                   }`}
                   type='password'
@@ -95,7 +95,7 @@ export default function Login() {
             <div>
               <button
                 type='submit'
-                className='w-full text-center py-2 rounded-lg bg-blue-500 text-white'
+                className='w-full text-center py-2 rounded-lg transistion ease-in-out duration-150 dark:bg-blue-800 dark:hover:bg-blue-900 bg-blue-500 text-white'
                 onClick={handleSubmit(async () => {
                   try {
                     await firebase.login(getValues());

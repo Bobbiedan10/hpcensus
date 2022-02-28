@@ -27,25 +27,36 @@ function DeleteSenior(props) {
     <Layout>
       <div className='mx-auto lg:h-screen'>
         <div className='grid lg:grid-cols-6 h-full'>
-          <div className='lg:col-span-1 mt-14 bg-gray-100 '>
-            <ul className='flex lg:flex-col'>
+          <div className='lg:col-span-1 mt-14 dark:bg-gray-700 bg-gray-100 '>
+            <ul className='dark:bg-gray-600 flex lg:flex-col'>
               <li className='h-14 flex items-center border-b-2'>
                 <Link href='/dashboard/senior-supervisors'>
-                  <a className='h-full w-full flex items-center px-2'>
+                  <a
+                    className='h-full w-full flex items-center px-2
+                    
+                  bg-yellow-500 text-white
+                    font-bold'>
                     Senior Supervisors
                   </a>
                 </Link>
               </li>
               <li className='h-14 flex items-center border-b-2'>
                 <Link href='/dashboard/supervisors'>
-                  <a className='h-full w-full flex items-center px-2'>
+                  <a
+                    className='h-full w-full flex items-center px-2 transition duration-150 ease-in-out hover:bg-orange-600 hover:text-white
+                  hover:font-bold'>
                     Supervisors
                   </a>
                 </Link>
               </li>
               <li className='h-14 flex items-center border-b-2'>
                 <Link href='/dashboard/enumerators'>
-                  <a className='h-full w-full flex items-center px-2'>
+                  <a
+                    className='h-full w-full flex items-center px-2
+                  hover:bg-pink-600 hover:text-white
+                    hover:font-bold
+                    transistions ease-in-out
+                    duration-150'>
                     Enumerators
                   </a>
                 </Link>
@@ -53,7 +64,7 @@ function DeleteSenior(props) {
             </ul>
           </div>
           <div className='lg:mt-14 lg:col-span-5 flex flex-col'>
-            <div className='flex items-center justify-between px-2 lg:px-4 py-3 bg-gray-300'>
+            <div className='flex items-center justify-between px-2 lg:px-4 py-3 bg-gray-300 dark:bg-gray-400 '>
               <h1 className=''>
                 <b>Welcome,</b> {profile.name}
               </h1>

@@ -18,7 +18,7 @@ function ResetPassword() {
         <div className='flex items-center'>
           <form
             name='login'
-            className='border w-80 lg:w-96 mx-auto rounded-lg shadow-md p-4 flex flex-col space-y-4'>
+            className='dark:bg-gray-600  dark:text-gray-200 border w-80 lg:w-96 mx-auto rounded-lg shadow-md p-4 flex flex-col space-y-4'>
             <h1 className='text-center font-bold text-xl '>Reset Password</h1>
 
             <div className='space-y-2 flex flex-col'>
@@ -28,10 +28,11 @@ function ResetPassword() {
                 </label>
                 <input
                   name='pass'
-                  className={`bg-gray-100 p-2 rounded-lg border w-full ${
+                  className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700  border w-full ${
                     errors.name ? "border-red-500" : null
                   }`}
                   type='password'
+                  placeholder='New Password'
                   {...register("pass", {
                     required: {
                       value: true,
@@ -47,7 +48,7 @@ function ResetPassword() {
             <div className='flex flex-col gap-y-2'>
               <button
                 type='submit'
-                className='w-full text-center py-2 rounded-lg bg-blue-500 text-white'
+                className='w-full text-center py-2 rounded-lg transition ease-in-out duration-150 dark:hover:bg-blue-900 dark:bg-blue-800 bg-blue-500 text-white'
                 onClick={handleSubmit(async () => {
                   try {
                     await firebase.resetPassword(getValues("pass"));

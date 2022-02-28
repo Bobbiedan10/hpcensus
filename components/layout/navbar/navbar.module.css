@@ -1,5 +1,5 @@
 .navbar {
-  @apply fixed bg-blue-50 inset-x-0 shadow top-0 dark:bg-blue-700 z-50 dark:text-blue-50;
+  @apply fixed bg-blue-700 inset-x-0 shadow top-0  z-50 text-blue-50;
 }
 
 .container {

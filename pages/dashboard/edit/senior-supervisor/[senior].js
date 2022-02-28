@@ -28,8 +28,8 @@ function EditSenior(props) {
     <Layout>
       <div className='mx-auto lg:h-screen'>
         <div className='grid lg:grid-cols-6 h-full'>
-          <div className='lg:col-span-1 mt-14 bg-gray-100 '>
-            <ul className='flex lg:flex-col'>
+          <div className='lg:col-span-1 mt-14 dark:bg-gray-700 bg-gray-100 '>
+            <ul className='dark:bg-gray-600 flex lg:flex-col'>
               <li className='h-14 flex items-center border-b-2'>
                 <Link href='/dashboard/senior-supervisors'>
                   <a

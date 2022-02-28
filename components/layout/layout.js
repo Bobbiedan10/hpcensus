@@ -1,5 +1,5 @@
 import { Fragment, useEffect } from "react";
-import Footer from "./footer/footer";
+import ToggleSwitch from "../ui/toggle-switch";
 import Navbar from "./navbar/navbar";
 import firebase from "../../firebase/firebase";
 import Router from "next/router";
@@ -17,7 +17,8 @@ function Layout(props) {
   return (
     <Fragment>
       <Navbar />
-      <main>{props.children}</main>
+      <main className=''>{props.children}</main>
+      <ToggleSwitch />
     </Fragment>
   );
 }

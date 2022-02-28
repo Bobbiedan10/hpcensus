@@ -9,8 +9,8 @@ function SeniorSupervisor(props) {
     <Layout>
       <div className='mx-auto lg:h-screen'>
         <div className='grid lg:grid-cols-6 h-full'>
-          <div className='lg:col-span-1 mt-14 bg-gray-100 '>
-            <ul className='flex lg:flex-col'>
+          <div className='dark:bg-gray-700 lg:col-span-1 mt-14 bg-gray-100'>
+            <ul className='flex dark:bg-gray-600 dark:text-gray-300 lg:flex-col'>
               <li className='h-14 flex items-center border-b-2'>
                 <Link href='/dashboard/senior-supervisors'>
                   <a
@@ -46,7 +46,7 @@ function SeniorSupervisor(props) {
             </ul>
           </div>
           <div className='lg:mt-14 lg:col-span-5 flex flex-col overflow-x-auto relative'>
-            <div className='flex items-center justify-between px-2 lg:px-4 py-3 bg-gray-300 absolute inset-x-0'>
+            <div className='dark:bg-gray-400 flex items-center justify-between px-2 lg:px-4 py-3 bg-gray-300 absolute inset-x-0'>
               <h1 className=''>
                 <b>Welcome,</b> {profile.name}
               </h1>
@@ -79,7 +79,9 @@ function SeniorSupervisor(props) {
                     </tr>
                   ) : (
                     allSeniors.map((theSenior) => (
-                      <tr className='border-b' key={theSenior.id}>
+                      <tr
+                        className='dark:text-gray-200 even:bg-gray-600 odd:bg-gray-500 border-b'
+                        key={theSenior.id}>
                         <td className='px-2 lg:px-4 py-3'>
                           {theSenior.docData.name}
                         </td>
@@ -95,19 +97,19 @@ function SeniorSupervisor(props) {
                             <Link
                               href={`edit/senior-supervisor/${theSenior.id}`}
                               as={`edit/senior-supervisor/${theSenior.id}`}>
-                              <a className='bg-green-500 text-white py-2 px-2 rounded-lg'>
+                              <a className='bg-green-500 hover:bg-green-600 transition ease-in-out duration-150 text-white py-2 px-2 rounded-lg'>
                                 Edit
                               </a>
                             </Link>
                             <Link
                               href={`delete/senior-supervisor/${theSenior.id}`}>
-                              <a className='bg-red-500 text-white py-2 px-2 rounded-lg'>
+                              <a className='bg-red-500 hover:bg-red-600 transition ease-in-out duration-150  text-white py-2 px-2 rounded-lg'>
                                 Delete
                               </a>
                             </Link>
                             <Link
                               href={`details/senior-supervisor/${theSenior.id}`}>
-                              <a className='bg-blue-500 text-white py-2 px-2 rounded-lg'>
+                              <a className='bg-blue-500 hover:bg-blue-600 transition ease-in-out duration-150 text-white py-2 px-2 rounded-lg'>
                                 View
                               </a>
                             </Link>

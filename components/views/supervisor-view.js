@@ -5,7 +5,7 @@ import StatusIcon from "../icons/status-icon";
 import UserIcon from "../icons/user-icon";
 import UserRole from "../icons/user-role";
 
-function idrvisorView(props) {
+function SupervisorView(props) {
   const { identity, enums } = props;
 
   let iden;
@@ -94,4 +94,4 @@ function idrvisorView(props) {
   );
 }
 
-export default idrvisorView;
+export default SupervisorView;

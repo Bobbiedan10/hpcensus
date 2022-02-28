@@ -1,5 +1,6 @@
 import "../styles/globals.css";
 import { useState, useEffect } from "react";
+import { ThemeProvider } from "next-themes";
 import firebase from "../firebase/firebase";
 
 function MyApp({ Component, pageProps }) {
@@ -13,7 +14,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       {!firebaseInitialized ? (
-        <div className='h-screen flex justify-center items-center '>
+        <div className='h-screen dark:bg-gray-900 flex justify-center items-center '>
           <div className='flex space-x-2 animate-spin'>
             <div className='rounded-full p-4 bg-blue-600  duration-100 shadow-lg'></div>
             <div className='rounded-full p-4 bg-pink-600  duration-150 shadow-lg'></div>
@@ -21,7 +22,9 @@ function MyApp({ Component, pageProps }) {
           </div>
         </div>
       ) : (
-        <Component {...pageProps} />
+        <ThemeProvider attribute='class'>
+          <Component {...pageProps} />
+        </ThemeProvider>
       )}
     </>
   );
