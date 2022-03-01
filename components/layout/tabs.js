@@ -13,9 +13,9 @@ function Tabs(props) {
   };
   return (
     <div>
-      <ul className={classes.tabs}>
+      <ul className={"dark:bg-blue-500 bg-blue-50 " + classes.tabs}>
         <li
-          className={`hover:bg-pink-600${
+          className={`hover:bg-pink-600 ${
             toggleState === 1 ? `${classes.active} bg-pink-600` : ""
           }`}
           onClick={() => toggleTab(1)}>
