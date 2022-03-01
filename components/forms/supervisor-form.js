@@ -140,7 +140,7 @@ function SupervisorForm(props) {
               placeholder='Email'
               {...register("email", {
                 required: {
-                  value: true,
+                  value: false,
                   message: "Enter supervisor's email address",
                 },
                 pattern: {
