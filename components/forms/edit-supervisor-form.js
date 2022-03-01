@@ -126,7 +126,7 @@ function EditSupervisorForm(props) {
                     message: "Missing supervisor's phone number.",
                   },
                   pattern: {
-                    value: /^[2-8]{3}-[0-9]{4}$/g,
+                    value: /^[2-9]{3}-[0-9]{4}$/g,
                     message: "Incorrect format. 123-4567",
                   },
                 })}

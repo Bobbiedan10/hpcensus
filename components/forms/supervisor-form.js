@@ -119,7 +119,7 @@ function SupervisorForm(props) {
                   message: "Enter supervisor's phone number.",
                 },
                 pattern: {
-                  value: /^[2-8]{3}-[0-9]{4}$/g,
+                  value: /^[2-8]{1}[0-9]{2}-[0-9]{4}$/g,
                   message: "Incorrect format 123-4567",
                 },
               })}
