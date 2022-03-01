@@ -114,10 +114,6 @@ function EnumeratorForm(props) {
                   value: true,
                   message: "Missing enumerator's phone number.",
                 },
-                pattern: {
-                  value: /^[2-8]{3}-[0-9]{4}$/g,
-                  message: "Incorrect format. 123-4567",
-                },
               })}
               className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
                 errors.name ? "border-red-500" : null
@@ -656,7 +652,7 @@ function EnumeratorForm(props) {
           <h1 className='font-bold'>Mass Enumeration</h1>
         </div>
         {/*MASS ED*/}
-        <div className='px-4 lg:col-span-1'>
+        <div className='px-4 lg:col-span-2'>
           <div className='flex items-center gap-2'>
             <label
               className='dark:text-gray-300 flex font-bold'

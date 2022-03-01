@@ -109,10 +109,6 @@ function EditSeniorForm(props) {
                     value: true,
                     message: "Enter senior's phone number.",
                   },
-                  pattern: {
-                    value: /^[2-8]{3}-[0-9]{4}$/g,
-                    message: "Incorrect format 123-4567",
-                  },
                 })}
                 className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700  border w-full ${
                   errors.name ? "border-red-500" : null
@@ -139,7 +135,7 @@ function EditSeniorForm(props) {
                 defaultValue={id.docData.email}
                 {...register("email", {
                   required: {
-                    value: true,
+                    value: false,
                     message: "Missing senior's email address",
                   },
                   pattern: {

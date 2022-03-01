@@ -125,7 +125,7 @@ function SeniorForm(props) {
               placeholder='Email'
               {...register("email", {
                 required: {
-                  value: true,
+                  value: false,
                   message: "Missing senior's email address",
                 },
                 pattern: {

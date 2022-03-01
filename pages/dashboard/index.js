@@ -44,7 +44,7 @@ function Dashboard(props) {
                 </a>
               </Link>
             </div>
-            <div className='px-4 pb-4 grid gap-4 lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3'>
+            <div className='px-4 grid gap-4 lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3'>
               <div className='rounded-lg border shadow flex flex-col dark:bg-gray-400'>
                 <h1 className=' border-b p-2 font-bold text-xl text-blue-600'>
                   Active Seniors
@@ -78,7 +78,7 @@ function Dashboard(props) {
                 </div>
               </div>
             </div>
-            <div className='px-4 grid gap-4 lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3'>
+            <div className='px-4 pb-4 grid gap-4 lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3'>
               <div className='rounded-lg border shadow flex dark:bg-gray-400 flex-col'>
                 <h1 className=' border-b p-2 font-bold text-xl text-blue-600'>
                   Enumerators in Parish

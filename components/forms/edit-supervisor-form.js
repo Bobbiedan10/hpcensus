@@ -125,10 +125,6 @@ function EditSupervisorForm(props) {
                     value: true,
                     message: "Missing supervisor's phone number.",
                   },
-                  pattern: {
-                    value: /^[2-9]{3}-[0-9]{4}$/g,
-                    message: "Incorrect format. 123-4567",
-                  },
                 })}
                 className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
                   errors.name ? "border-red-500" : null
@@ -155,7 +151,7 @@ function EditSupervisorForm(props) {
                 defaultValue={id.docData.email}
                 {...register("email", {
                   required: {
-                    value: true,
+                    value: false,
                     message: "Missing supervisor's email address",
                   },
                   pattern: {
