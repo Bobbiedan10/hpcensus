@@ -118,10 +118,6 @@ function SupervisorForm(props) {
                   value: true,
                   message: "Enter supervisor's phone number.",
                 },
-                pattern: {
-                  value: /^[0-9]{3}-[0-9]{4}$/g,
-                  message: "Incorrect format 123-4567",
-                },
               })}
               className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
                 errors.name ? "border-red-500" : null
