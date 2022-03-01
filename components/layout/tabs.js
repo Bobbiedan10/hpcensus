@@ -6,7 +6,7 @@ import SeniorForm from "../forms/senior-form";
 
 function Tabs(props) {
   const { seniors, supes } = props;
-  const [toggleState, setToggleState] = useState(1);
+  const [toggleState, setToggleState] = useState(3);
 
   const toggleTab = (index) => {
     setToggleState(index);

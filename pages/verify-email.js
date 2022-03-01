@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import firebase from "../firebase/firebase";
 import "firebase/compat/auth";
 import ArrowRightIcon from "../components/icons/arrow-right-icon";
+import ToggleSwitch from "../components/ui/toggle-switch";
 function VerifyEmail() {
   const logout = firebase.logout();
   const sendEmail = firebase;
@@ -49,6 +50,7 @@ function VerifyEmail() {
           </div>
         </div>
       </div>
+      <ToggleSwitch />
     </div>
   );
   //   } else {

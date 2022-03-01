@@ -49,7 +49,7 @@ function SupervisorView(props) {
                   {j + 1}
                 </div>
 
-                <div className='w-full flex items-center px-4 gap-12 border-b-2 text-black'>
+                <div className='w-full flex items-center px-4 gap-12 border-b-2 dark:bg-gray-500 text-black'>
                   <div className='flex items-center'>
                     <UserIcon />
                     {enume.docData.name}

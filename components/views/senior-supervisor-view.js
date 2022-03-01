@@ -34,7 +34,7 @@ function SeniorSupervisorView(props) {
             </div>
             <div className='items-center flex'>
               <DeviceMobileIcon />
-              {id.docData.tabletId == "" ? (
+              {id.docData.tablet == "" ? (
                 <i>No tablet assigned</i>
               ) : (
                 <div>{id.docData.tabletId}</div>
@@ -52,7 +52,7 @@ function SeniorSupervisorView(props) {
                     <div className='bg-gray-700 px-4 py-2 border-b-2'>
                       {i + 1}
                     </div>
-                    <div className=' text-black w-full flex items-center px-4 gap-12 border-b-2'>
+                    <div className='dark:bg-gray-500 text-black w-full flex items-center px-4 gap-12 border-b-2'>
                       <h1 className='flex items-center whitespace-nowrap'>
                         <UserIcon />
                         {supe.docData.name}
@@ -68,7 +68,7 @@ function SeniorSupervisorView(props) {
                         <MailIcon /> {supe.docData.email}
                       </div>
                       <div className='items-center flex'>
-                        <DeviceMobileIcon />{" "}
+                        <DeviceMobileIcon />
                         {supe.docData.tablet == "" ? (
                           <i>No tablet assigned</i>
                         ) : (
@@ -87,7 +87,7 @@ function SeniorSupervisorView(props) {
                           {j + 1}
                         </div> */}
 
-                        <div className='w-full flex items-center px-4 gap-12 border-b-2 text-black'>
+                        <div className='dark:bg-gray-500 w-full flex items-center px-4 gap-12 border-b-2 text-black'>
                           <div className='flex items-center whitespace-nowrap'>
                             <UserIcon />
                             {enume.docData.name}

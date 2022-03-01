@@ -6,6 +6,7 @@ import UserIcon from "../../components/icons/user-icon";
 import EnvelopeIcon from "../../components/icons/mail-icon";
 import KeyIcon from "../../components/icons/key-icon";
 import Link from "next/link";
+import ToggleSwitch from "../../components/ui/toggle-switch";
 
 export default function CreateUser() {
   const {
@@ -22,7 +23,7 @@ export default function CreateUser() {
         <div className='flex items-center justify_center'>
           <form
             name='login'
-            className='dark:bg-gray-600  text-gray-100 border w-80 lg:w-96 mx-auto rounded-lg shadow-md p-4 flex flex-col space-y-4'>
+            className='dark:bg-gray-600  dark:text-gray-100 border w-80 lg:w-96 mx-auto rounded-lg shadow-lg dark:shadow-blue-600 p-4 flex flex-col space-y-4'>
             <div className='hidden md:flex justify-center items-center'>
               <img src='/img/logo.png' alt='logo' className='w-2/4' />
             </div>
@@ -135,6 +136,7 @@ export default function CreateUser() {
           </form>
         </div>
       </div>
+      <ToggleSwitch />
     </div>
   );
 }

@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import Router from "next/router";
 import KeyIcon from "../components/icons/key-icon";
 import EnvelopeIcon from "../components/icons/mail-icon";
+import ToggleSwitch from "../components/ui/toggle-switch";
 
 export default function Login() {
   useEffect(() => {
@@ -127,6 +128,7 @@ export default function Login() {
           </form>
         </div>
       </div>
+      <ToggleSwitch />
     </div>
   );
 }
