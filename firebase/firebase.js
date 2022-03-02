@@ -131,6 +131,22 @@ class Firebase {
     return count;
   }
 
+  async getDocumentsByCondition(collection, field, condition, value) {
+    let list = [];
+    let db = firebase
+      .firestore()
+      .collection(collection)
+      .where(field, condition, value);
+
+    await db.get().then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        list.push(doc.data());
+      });
+    });
+
+    return list;
+  }
+
   async getCollectionByCondition(collection, field, condition, value) {
     let list = [];
     let db = firebase
@@ -149,7 +165,7 @@ class Firebase {
 
   async getCollection(collection) {
     let data = [];
-    let db = firebase.firestore().collection(collection);
+    let db = firebase.firestore().collection(collection).orderBy("name", "asc");
     await db.get().then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
         data.push({

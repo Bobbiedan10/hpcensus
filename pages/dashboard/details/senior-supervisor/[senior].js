@@ -93,8 +93,18 @@ export async function getServerSideProps(context) {
   let id = params.senior;
 
   let identity = await firebase.getDocument("senior-supervisors", id);
-  let enumerators = await firebase.getCollection("enumerators");
-  let supervisor = await firebase.getCollection("supervisors");
+  let enumerators = await firebase.getDocumentsByCondition(
+    "enumerators",
+    "senior",
+    "==",
+    id
+  );
+  let supervisor = await firebase.getDocumentsByCondition(
+    "supervisors",
+    "senior",
+    "==",
+    id
+  );
   let enums = JSON.stringify(enumerators);
   let iden = JSON.stringify(identity);
   let supes = JSON.stringify(supervisor);

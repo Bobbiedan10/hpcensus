@@ -79,7 +79,7 @@ function SeniorSupervisor(props) {
                   ) : (
                     allSeniors.map((theSenior) => (
                       <tr
-                        className='dark:text-gray-200 even:bg-gray-600 odd:bg-gray-500 border-b'
+                        className='dark:text-gray-200 dark:even:bg-gray-600  dark:odd:bg-gray-500 even:bg-gray-300 odd:bg-gray-200 border-b'
                         key={theSenior.id}>
                         <td className='px-2 lg:px-4 py-3'>
                           {theSenior.docData.name}

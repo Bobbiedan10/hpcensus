@@ -84,7 +84,7 @@ function Enumerators(props) {
                   ) : (
                     allEnum.map((theEnum) => (
                       <tr
-                        className='even:bg-gray-300 odd:bg-gray-400 border-b'
+                        className='dark:text-gray-200 dark:even:bg-gray-600  dark:odd:bg-gray-500 even:bg-gray-300 odd:bg-gray-200 border-b'
                         key={theEnum.id}>
                         <td className='px-2 lg:px-4 py-3'>
                           {theEnum.docData.name}

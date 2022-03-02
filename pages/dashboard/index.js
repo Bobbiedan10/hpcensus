@@ -77,6 +77,17 @@ function Dashboard(props) {
                   </h1>
                 </div>
               </div>
+
+              <div className='rounded-lg border shadow flex dark:bg-gray-400 flex-col'>
+                <h1 className=' border-b p-2 font-bold text-xl text-blue-600'>
+                  Mass Enumeration
+                </h1>
+                <div className=''>
+                  <h1 className='flex justify-center text-8xl font-semibold dark:text-gray-200'>
+                    {props.massEnum + props.massSupe}
+                  </h1>
+                </div>
+              </div>
             </div>
             <div className='px-4 pb-4 grid gap-4 lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3'>
               <div className='rounded-lg border shadow flex dark:bg-gray-400 flex-col'>
@@ -236,11 +247,27 @@ export async function getServerSideProps() {
     "Not Assigned"
   );
 
+  let massEnum = await firebase.getCountByCondition(
+    "enumerators",
+    "mass_ed",
+    "!=",
+    "[]"
+  );
+
+  let massSupe = await firebase.getCountByCondition(
+    "supervisors",
+    "enumerating",
+    "==",
+    "true"
+  );
+
   return {
     props: {
       enumCount: enumCount,
       supeCount: supeCount,
       ssupeCount: ssupeCount,
+      massEnum: massEnum,
+      massSupe: massSupe,
       smichaelCount: smichaelCount,
       chchCount: chchCount,
       sgeorgeCount: sgeorgeCount,
