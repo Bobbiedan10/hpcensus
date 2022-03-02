@@ -711,7 +711,7 @@ function SupervisorForm(props) {
               })}
               type='submit'
               value='Add'
-              className='py-2 px-4 text-white rounded-lg bg-green-500'
+              className='py-2 px-4 cursor-pointer text-white rounded-lg bg-green-500'
             />
             <Link href=''>
               <a
