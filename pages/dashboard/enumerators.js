@@ -68,6 +68,7 @@ function Enumerators(props) {
                     <th className='px-2 lg:px-4 py-3'>Senior</th>
                     <th className='px-2 lg:px-4 py-3'>Status</th>
                     <th className='px-2 lg:px-4 py-3'>ED</th>
+                    <th className='px-2 lg:px-4 py-3'>Parish</th>
                     <th className='px-2 lg:px-4 py-3'>Contact #</th>
                     <th className='px-2 lg:px-4 py-3'>Actions</th>
                   </tr>
@@ -100,6 +101,9 @@ function Enumerators(props) {
                         </td>
                         <td className='px-2 lg:px-4 py-3'>
                           {theEnum.docData.ed.slice(-1)}
+                        </td>
+                        <td className='px-2 lg:px-4 py-3'>
+                          {theEnum.docData.enum_parish}
                         </td>
                         <td className='px-2 lg:px-4 py-3'>
                           {theEnum.docData.phone}
