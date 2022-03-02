@@ -86,7 +86,7 @@ function EnumeratorForm(props) {
               placeholder='Address'
               {...register("address", {
                 required: {
-                  value: true,
+                  value: false,
                   message: "Missing enumerator's address",
                 },
               })}
@@ -111,7 +111,7 @@ function EnumeratorForm(props) {
               placeholder='123-4576'
               {...register("phone", {
                 required: {
-                  value: true,
+                  value: false,
                   message: "Missing enumerator's phone number.",
                 },
               })}
@@ -136,7 +136,7 @@ function EnumeratorForm(props) {
               placeholder='Email'
               {...register("email", {
                 required: {
-                  value: true,
+                  value: false,
                   message: "Missing enumerator's email address",
                 },
                 pattern: {
@@ -168,7 +168,7 @@ function EnumeratorForm(props) {
               placeholder='National ID #'
               {...register("nid", {
                 required: {
-                  value: true,
+                  value: false,
                   message: "Enter enumerator's national ID",
                 },
                 pattern: {
@@ -356,7 +356,7 @@ function EnumeratorForm(props) {
               name='senior'
               {...register("senior", {
                 required: {
-                  value: true,
+                  value: false,
                   message: "Select designated Senior",
                 },
               })}
@@ -388,7 +388,7 @@ function EnumeratorForm(props) {
               name='supervisor'
               {...register("supervisor", {
                 required: {
-                  value: true,
+                  value: false,
                   message: "Select designated Supervisor",
                 },
               })}
@@ -459,7 +459,7 @@ function EnumeratorForm(props) {
               name='enum_parish'
               {...register("enum_parish", {
                 required: {
-                  value: true,
+                  value: false,
                   message: "Select active parish",
                 },
               })}
@@ -495,7 +495,7 @@ function EnumeratorForm(props) {
               name='status'
               {...register("status", {
                 required: {
-                  value: true,
+                  value: false,
                   message: "Select status",
                 },
               })}
@@ -528,7 +528,7 @@ function EnumeratorForm(props) {
               name='contract'
               {...register("contract", {
                 required: {
-                  value: true,
+                  value: false,
                 },
               })}
               className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
@@ -550,7 +550,7 @@ function EnumeratorForm(props) {
               name='oath'
               {...register("oath", {
                 required: {
-                  value: true,
+                  value: false,
                 },
               })}
               className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
@@ -574,7 +574,7 @@ function EnumeratorForm(props) {
               name='enumId'
               {...register("enumId", {
                 required: {
-                  value: true,
+                  value: false,
                 },
               })}
               className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
@@ -596,7 +596,7 @@ function EnumeratorForm(props) {
               name='transport'
               {...register("transport", {
                 required: {
-                  value: true,
+                  value: false,
                 },
               })}
               className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${

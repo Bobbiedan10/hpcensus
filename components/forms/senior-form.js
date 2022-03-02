@@ -40,7 +40,7 @@ function SeniorForm(props) {
               placeholder='Name'
               {...register("name", {
                 required: {
-                  value: true,
+                  value: false,
                   message: "Missing senior's name",
                 },
                 pattern: {
@@ -71,7 +71,7 @@ function SeniorForm(props) {
               placeholder='Address'
               {...register("address", {
                 required: {
-                  value: true,
+                  value: false,
                   message: "Enter senior's address",
                 },
               })}
@@ -96,7 +96,7 @@ function SeniorForm(props) {
               placeholder='123-4576'
               {...register("phone", {
                 required: {
-                  value: true,
+                  value: false,
                   message: "Enter senior's phone number.",
                 },
               })}
@@ -165,7 +165,7 @@ function SeniorForm(props) {
               name='status'
               {...register("status", {
                 required: {
-                  value: true,
+                  value: false,
                   message: "Select status",
                 },
               })}

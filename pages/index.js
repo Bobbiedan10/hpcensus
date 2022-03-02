@@ -55,7 +55,7 @@ export default function Login() {
                       message: "Enter your organization email!",
                     },
                     pattern: {
-                      value: /^[A-Z0-9._%+-]+@barstats.gov.bb/i,
+                      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
                       message: "Email must have organization suffix",
                     },
                   })}

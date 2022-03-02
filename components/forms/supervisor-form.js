@@ -59,7 +59,7 @@ function SupervisorForm(props) {
               placeholder='Name'
               {...register("name", {
                 required: {
-                  value: true,
+                  value: false,
                   message: "Missing supervisor's name",
                 },
                 pattern: {
@@ -90,7 +90,7 @@ function SupervisorForm(props) {
               placeholder='Address'
               {...register("address", {
                 required: {
-                  value: true,
+                  value: false,
                   message: "Enter enumerator address",
                 },
               })}
@@ -115,7 +115,7 @@ function SupervisorForm(props) {
               placeholder='123-4576'
               {...register("phone", {
                 required: {
-                  value: true,
+                  value: false,
                   message: "Enter supervisor's phone number.",
                 },
               })}
@@ -172,7 +172,7 @@ function SupervisorForm(props) {
               placeholder='National ID #'
               {...register("nid", {
                 required: {
-                  value: true,
+                  value: false,
                   message: "Enter supervisor's national ID",
                 },
                 pattern: {
@@ -360,7 +360,7 @@ function SupervisorForm(props) {
               name='senior'
               {...register("senior", {
                 required: {
-                  value: true,
+                  value: false,
                   message: "Select designated Senior",
                 },
               })}
@@ -463,7 +463,7 @@ function SupervisorForm(props) {
               name='enum_parish'
               {...register("enum_parish", {
                 required: {
-                  value: true,
+                  value: false,
                   message: "Select active parish",
                 },
               })}
@@ -498,7 +498,7 @@ function SupervisorForm(props) {
               name='status'
               {...register("status", {
                 required: {
-                  value: true,
+                  value: false,
                   message: "Select status",
                 },
               })}
@@ -532,7 +532,7 @@ function SupervisorForm(props) {
               name='contract'
               {...register("contract", {
                 required: {
-                  value: true,
+                  value: false,
                 },
               })}
               className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
@@ -554,7 +554,7 @@ function SupervisorForm(props) {
               name='oath'
               {...register("oath", {
                 required: {
-                  value: true,
+                  value: false,
                 },
               })}
               className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
@@ -576,7 +576,7 @@ function SupervisorForm(props) {
               name='enumId'
               {...register("enumId", {
                 required: {
-                  value: true,
+                  value: false,
                 },
               })}
               className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
@@ -600,7 +600,7 @@ function SupervisorForm(props) {
               name='transport'
               {...register("transport", {
                 required: {
-                  value: true,
+                  value: false,
                 },
               })}
               className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
