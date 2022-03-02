@@ -45,7 +45,7 @@ function EditSeniorForm(props) {
                 placeholder='Name'
                 {...register("name", {
                   required: {
-                    value: true,
+                    value: false,
                     message: "Missing Senior's name",
                   },
                   pattern: {
@@ -77,7 +77,7 @@ function EditSeniorForm(props) {
                 defaultValue={id.docData.address}
                 {...register("address", {
                   required: {
-                    value: true,
+                    value: false,
                     message: "Enter senior's address",
                   },
                 })}
@@ -106,7 +106,7 @@ function EditSeniorForm(props) {
                 placeholder='123-4576'
                 {...register("phone", {
                   required: {
-                    value: true,
+                    value: false,
                     message: "Enter senior's phone number.",
                   },
                 })}

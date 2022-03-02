@@ -55,7 +55,7 @@ function EnumeratorForm(props) {
               placeholder='Name'
               {...register("name", {
                 required: {
-                  value: true,
+                  value: false,
                   message: "Missing enumerator's name",
                 },
                 pattern: {
@@ -495,7 +495,7 @@ function EnumeratorForm(props) {
               name='status'
               {...register("status", {
                 required: {
-                  value: true,
+                  value: false,
                   message: "Select status",
                 },
               })}

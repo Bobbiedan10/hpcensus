@@ -61,7 +61,7 @@ function EditSupervisorForm(props) {
                 placeholder='Name'
                 {...register("name", {
                   required: {
-                    value: true,
+                    value: false,
                     message: "Enter supervisor's name",
                   },
                   pattern: {
@@ -93,7 +93,7 @@ function EditSupervisorForm(props) {
                 defaultValue={id.docData.address}
                 {...register("address", {
                   required: {
-                    value: true,
+                    value: false,
                     message: "Missing supervisor's address",
                   },
                 })}
@@ -122,7 +122,7 @@ function EditSupervisorForm(props) {
                 placeholder='123-4576'
                 {...register("phone", {
                   required: {
-                    value: true,
+                    value: false,
                     message: "Missing supervisor's phone number.",
                   },
                 })}
@@ -184,7 +184,7 @@ function EditSupervisorForm(props) {
                 defaultValue={id.docData.nid}
                 {...register("nid", {
                   required: {
-                    value: true,
+                    value: false,
                     message: "Enter enumerator national ID",
                   },
                   pattern: {
@@ -374,7 +374,7 @@ function EditSupervisorForm(props) {
                 name='role'
                 {...register("role", {
                   required: {
-                    value: true,
+                    value: false,
                   },
                 })}
                 className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
@@ -400,7 +400,7 @@ function EditSupervisorForm(props) {
                 name='senior'
                 {...register("senior", {
                   required: {
-                    value: true,
+                    value: false,
                     message: "Select designated Senior",
                   },
                 })}
@@ -511,7 +511,7 @@ function EditSupervisorForm(props) {
                 name='enum_parish'
                 {...register("enum_parish", {
                   required: {
-                    value: true,
+                    value: false,
                     message: "Select active parish",
                   },
                 })}
@@ -584,7 +584,7 @@ function EditSupervisorForm(props) {
                 name='contract'
                 {...register("contract", {
                   required: {
-                    value: true,
+                    value: false,
                   },
                 })}
                 className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
@@ -606,7 +606,7 @@ function EditSupervisorForm(props) {
                 name='oath'
                 {...register("oath", {
                   required: {
-                    value: true,
+                    value: false,
                   },
                 })}
                 className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
@@ -633,7 +633,7 @@ function EditSupervisorForm(props) {
                 name='enumId'
                 {...register("enumId", {
                   required: {
-                    value: true,
+                    value: false,
                   },
                 })}
                 className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
@@ -656,7 +656,7 @@ function EditSupervisorForm(props) {
                 name='transport'
                 {...register("transport", {
                   required: {
-                    value: true,
+                    value: false,
                   },
                 })}
                 className={`bg-gray-100 p-2 rounded-lg dark:bg-gray-400 dark:placeholder:text-gray-700 border w-full ${
