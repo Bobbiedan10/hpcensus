@@ -139,7 +139,7 @@ function Enumerators(props) {
 }
 
 export async function getServerSideProps() {
-  let allEnum = await firebase.getCollection("enumerators");
+  let allEnum = await firebase.getEnumeratorCollection("enumerators");
 
   return {
     props: {

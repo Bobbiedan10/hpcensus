@@ -177,6 +177,40 @@ class Firebase {
     return data;
   }
 
+  async getSupervisorCollection(collection) {
+    let data = [];
+    let db = firebase
+      .firestore()
+      .collection(collection)
+      .orderBy("senior", "asc");
+    await db.get().then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        data.push({
+          id: doc.id,
+          docData: doc.data(),
+        });
+      });
+    });
+    return data;
+  }
+
+  async getEnumeratorCollection(collection) {
+    let data = [];
+    let db = firebase
+      .firestore()
+      .collection(collection)
+      .orderBy("senior", "asc");
+    await db.get().then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        data.push({
+          id: doc.id,
+          docData: doc.data(),
+        });
+      });
+    });
+    return data;
+  }
+
   async getDocument(collection, docId) {
     let document = [];
     let db = firebase.firestore().collection(collection).doc(docId);

@@ -694,7 +694,7 @@ function EnumeratorForm(props) {
         {/*SUBMIT*/}
         <div className='px-3 py-2 sm:col-span-2 lg:col-span-6 border-t'>
           <div className='flex items-center gap-2 '>
-            <input
+            <button
               onClick={handleSubmit(async () => {
                 try {
                   await firebase.addEnumerator(getValues());
@@ -703,9 +703,9 @@ function EnumeratorForm(props) {
                 }
               })}
               type='submit'
-              value='Add'
-              className='py-2 px-4 text-white cursor-pointer rounded-lg bg-green-500'
-            />
+              className='py-2 px-4 text-white cursor-pointer rounded-lg bg-green-500'>
+              Add
+            </button>
             <Link href=''>
               <a
                 onClick={back}

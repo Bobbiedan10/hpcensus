@@ -132,7 +132,7 @@ function Supervisors(props) {
 }
 
 export async function getServerSideProps() {
-  let allSupes = await firebase.getCollection("supervisors");
+  let allSupes = await firebase.getSupervisorCollection("supervisors");
 
   return {
     props: {
