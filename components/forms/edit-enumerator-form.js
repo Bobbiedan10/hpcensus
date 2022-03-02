@@ -457,7 +457,7 @@ function EditEnumeratorForm(props) {
               </select>
             </div>
             <div className='text-red-500 font-medium'>
-              {errors?.senior?.message}
+              {errors?.supervisor?.message}
             </div>
           </div>
           {/*ED*/}
