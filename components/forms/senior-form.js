@@ -40,7 +40,7 @@ function SeniorForm(props) {
               placeholder='Name'
               {...register("name", {
                 required: {
-                  value: false,
+                  value: true,
                   message: "Missing senior's name",
                 },
                 pattern: {

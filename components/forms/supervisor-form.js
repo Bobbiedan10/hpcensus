@@ -59,7 +59,7 @@ function SupervisorForm(props) {
               placeholder='Name'
               {...register("name", {
                 required: {
-                  value: false,
+                  value: true,
                   message: "Missing supervisor's name",
                 },
                 pattern: {
@@ -498,7 +498,7 @@ function SupervisorForm(props) {
               name='status'
               {...register("status", {
                 required: {
-                  value: false,
+                  value: true,
                   message: "Select status",
                 },
               })}

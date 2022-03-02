@@ -495,7 +495,7 @@ function EnumeratorForm(props) {
               name='status'
               {...register("status", {
                 required: {
-                  value: false,
+                  value: true,
                   message: "Select status",
                 },
               })}

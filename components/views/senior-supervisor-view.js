@@ -132,9 +132,7 @@ function SeniorSupervisorView(props) {
                   )}
                 </div>
               </div>
-            ) : (
-              <div>No Supervisors</div>
-            )
+            ) : null
           )}
         </div>
       ))}
