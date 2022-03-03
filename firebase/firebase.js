@@ -199,7 +199,8 @@ class Firebase {
     let db = firebase
       .firestore()
       .collection(collection)
-      .orderBy("senior", "asc");
+      .orderBy("senior", "asc")
+      .orderBy("supervisor", "asc");
     await db.get().then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
         data.push({
