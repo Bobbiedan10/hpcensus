@@ -435,11 +435,13 @@ function EditSupervisorForm(props) {
                 type='checkbox'
                 name='enumerating'
                 onLoad={() => {
-                  id.docData.enumerating ? setVisible(true) : setVisible(false);
+                  id.docData.enumerating == true
+                    ? setVisible(true)
+                    : setVisible(false);
                 }}
                 defaultChecked={id.docData.enumerating}
                 onClick={() => {
-                  visible ? setVisible(true) : setVisible(false);
+                  visible ? setVisible(false) : setVisible(true);
                 }}
                 {...register("enumerating", {
                   required: {
